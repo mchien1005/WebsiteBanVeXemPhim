@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CABA Cinema</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <!-- Pikaday CSS và JS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
+    <script src="https://cdn.jsdelivr.net/npm/moment/min/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
+
+    <link rel="stylesheet" href="../css/profile.css">
+    <style>
+        main {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+
+        }
+
+        .container {
+            width: 90%;
+            display: flex;
+            background-color: white;
+            padding-top: 90px;
+            padding-bottom: 10px;
+        }
+
+        .sliderbar {
+            margin-top: 100px;
+            background-color: aqua;
+        }
+
+        .sidebar ul {
+            margin-top: 60px;
+            margin-left: 150px;
+            /* background-color: aqua; */
+        }
+
+        .sidebar li {
+            /* background-size: cover; */
+            /* background-position: center; */
+            width: 243px;
+            height: 35px;
+            display: flex;
+            padding-left: 50px;
+            padding-top: 7px;
+            padding-bottom: 5px;
+            /* align-items: center; */
+            justify-content: left;
+            color: #000;
+            /* font-family: Roboto; */
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 5px;
+            cursor: pointer;
+            border: 0;
+        }
+
+        /* Gán ảnh nền cho từng mục */
+        .item1 {
+            background-image: url('../icons/menu2.svg');
+        }
+
+        .item2 {
+            background-image: url('../icons/menu.svg');
+        }
+
+        .item3 {
+            background-image: url('../icons/menu.svg');
+        }
+
+        .item4 {
+            background-image: url('../icons/menu.svg');
+        }
+
+        .item5 {
+            background-image: url('../icons/menu.svg');
+        }
+
+        .item6 {
+            background-image: url('../icons/menu.svg');
+        }
+
+        .item7 {
+            background-image: url('../icons/menu.svg');
+        }
+
+        .content {
+            width: 70%;
+            padding: 20px;
+            margin: 0 auto;
+        }
+
+        .content p {
+            text-align: center;
+            padding-top: 15px;
+            margin-bottom: 20px;
+            margin-left: 100px;
+            width: 650px;
+            height: 45px;
+            border-radius: 10px;
+            background: #D9D9D9;
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+            font-family: Roboto;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 700;
+
+        }
+
+        .info-avatar-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 30px;
+            padding-left: 110px;
+            padding-top: 25px;
+
+        }
+
+        .info-section {
+            flex: 1;
+
+        }
+
+        .avatar-section {
+            flex-shrink: 0;
+
+        }
+
+        .avatar-section img {
+            margin-top: 10px;
+            width: 150px;
+            height: auto;
+            border-radius: 8px;
+            margin-right: -10px;
+        }
+
+        #changeAvatarBtn {
+            width: 150px;
+            height: 37px;
+            margin-top: 10px;
+            border-radius: 10px;
+            background-color: #2AA4F4;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            display: none;
+            /* Ẩn mặc định */
+        }
+
+
+        .form-group {
+            margin: 20px 0;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .form-group label {
+            width: 105px;
+            font-size: 14px;
+            font-weight: 400;
+            padding-top: 5px;
+        }
+
+        .input-wrapper input[type="text"],
+        .input-wrapper input[type="email"] {
+            width: 339px;
+            height: 30px;
+            padding: 5px 5px 5px 20px;
+            border-radius: 10px;
+            background: #D9D9D9;
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+            border: none;
+            font-size: 14px;
+            /* margin-bottom: 10px; */
+        }
+
+        .input-wrapper input[type="date"] {
+            width: 339px;
+            height: 30px;
+            padding: 5px 5px 5px 20px;
+            border-radius: 10px;
+            background: #D9D9D9;
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+            border: none;
+            font-size: 14px;
+            /* margin-bottom: 10px; */
+        }
+
+        .input-wrapper input[type="radio"] {
+            width: auto;
+            margin-left: 10px;
+            margin-right: 5px;
+            /* margin-bottom: 10px; */
+        }
+
+        /* .info-section button {
+            border-radius: 10px;
+            background: #FBFF00;
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+            border: none;
+            padding: 10px 20px;
+            color: black;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 20px;
+            width: 109px;
+            height: 32px;
+            flex-shrink: 0;
+            margin-left: 335px;
+            display: block;
+        } */
+
+        .action-buttons {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+            width: 450px;
+            /* Hoặc 100%, tùy container */
+        }
+
+        #backLink {
+            text-decoration: none;
+            font-weight: bold;
+            color: red;
+            font-size: 14px;
+            height: 32px;
+            line-height: 32px;
+        }
+
+        #editBtn {
+            border-radius: 10px;
+            background: #FBFF00;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border: none;
+            padding: 10px 20px;
+            color: black;
+            font-weight: bold;
+            cursor: pointer;
+            width: 109px;
+            height: 32px;
+        }
+
+        .action-buttons {
+            display: flex;
+            justify-content: flex-end;
+            /* Ban đầu chỉ có nút chỉnh sửa bên phải */
+            align-items: center;
+            margin-top: 20px;
+            width: 445px;
+            gap: 170px;
+            /* khoảng cách giữa 2 nút */
+        }
+
+        #backLink {
+            display: none;
+            text-decoration: none;
+            font-weight: bold;
+            color: red;
+            font-size: 14px;
+            height: 32px;
+            line-height: 32px;
+        }
+
+        #editBtn {
+            border-radius: 10px;
+            background: #FBFF00;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border: none;
+            padding: 10px 20px;
+            color: black;
+            font-weight: bold;
+            cursor: pointer;
+            width: 109px;
+            height: 32px;
+        }
+
+
+        .error-message {
+            color: red;
+            font-size: 12px;
+            margin-top: 5px;
+        }
+
+        #editBtn.save-mode {
+            background: rgba(255, 13, 13, 0.81);
+            ;
+            /* Màu đỏ khi đang chỉnh sửa */
+            color: white;
+        }
+
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            display: none;
+            /* mặc định ẩn, hiện bằng JavaScript */
+            align-items: center;
+            justify-content: center;
+            z-index: 999;
+        }
+
+        .popup-content {
+            padding: 50px 40px;
+            text-align: center;
+            position: relative;
+            width: 378px;
+            height: 238px;
+            border-radius: 10px;
+            border: none;
+            background: #81D4FA;
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .upload-area {
+
+            padding: 24px;
+            border-radius: 12px;
+            background-color: transparent;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            transition: border-color 0.3s;
+            cursor: pointer;
+        }
+
+        .upload-area.dragover {
+            border-color: #0088ff;
+            background-color: #d0ecff;
+            border: 2px dashed #aaa;
+        }
+
+        .upload-btn {
+            padding: 8px 18px;
+            background: white;
+            border-radius: 10px;
+            font-weight: bold;
+            width: 112px;
+            height: 36px;
+            border: none;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .upload-btn:hover {
+            background: #0088ff;
+            color: white;
+        }
+
+        #avatarImage {
+            width: 150px;
+            height: 150px;
+            border-radius: 10%;
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        }
+
+        .confirm-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.3);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+        }
+
+        .confirm-content {
+            width: 450px;
+            height: 150px;
+            background: #EFE7E7;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+            padding: 0;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .confirm-header {
+            color: #000;
+            font-family: Roboto;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            padding: 7px 9px 8px;
+        }
+
+        .custom-line {
+            height: 1px;
+            background-color: #95848459;
+            border: none;
+            margin-bottom: 7px;
+        }
+
+        .close-popup {
+            position: absolute;
+            top: 10px;
+            right: 12px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .confirm-body {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 30px;
+            color: #000;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: medium;
+            line-height: normal;
+        }
+
+        .ok-body {
+            display: flex;
+            align-items: center;
+            gap: 35px;
+            padding: 10px 45px;
+            color: #000;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+        }
+
+        .confirm-buttons {
+            display: flex;
+            justify-content: flex-end;
+            /* <-- Căn phải */
+            gap: 10px;
+            padding: 2px 40px 16px;
+        }
+
+        .ok-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            padding: 2px 40px 16px;
+
+        }
+
+        .btn-confirm {
+            background: #1EB3EE;
+            color: black;
+            border: 0.5px solid #5193D5;
+            padding: 2px 10px;
+            border-radius: 10px;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            cursor: pointer;
+            width: 84px;
+            height: 25px;
+
+        }
+
+        .btn-cancel {
+            background: #B3AAAA;
+            color: black;
+            border: none;
+            padding: 2px 10px;
+            border-radius: 10px;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            cursor: pointer;
+            width: 84px;
+            height: 25px;
+        }
+
+        .btn-ok {
+            background: #B3AAAA;
+            color: black;
+            border: none;
+            /* display: flex;
+            justify-content: center; */
+            padding: 2px 10px;
+            border-radius: 10px;
+
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            cursor: pointer;
+            width: 84px;
+            height: 25px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="navbar">
+        <div class="logo"><img src="../icons/logo.svg" /></div>
+        <nav>
+            <ul>
+                <a href="../index.html" style="text-decoration: none; color: inherit;">
+                    <li>TRANG CHỦ</li>
+                </a>
+                <a href="../movies.html" style="text-decoration: none; color: inherit;">
+                    <li>PHIM</li>
+                </a>
+                <li>TIN MỚI</li>
+                <a href="../HistoryBooking/history.html" style="text-decoration: none; color: inherit;">
+                    <li>VÉ CỦA TÔI</li>
+                </a>
+                <li>CABA HOÀNG MAI <img src="../icons/dropdown.svg" alt="Search" /></li>
+            </ul>
+        </nav>
+        <div class="search-user">
+            <div class="search-box">
+                <div class="search-icon">
+                    <img src="../icons/search.svg" alt="Search" />
+                </div>
+                <div class="separator"></div>
+                <input type="text" placeholder="Tìm kiếm..." />
+            </div>
+            <div class="notify-icon">
+                <img src="../icons/notify.svg" alt="Notify Icon" />
+            </div>
+            <div class="user">MINH CHIẾN</div>
+            <div class="user-icon">
+                <img src="../icons/avatar.svg" alt="User Icon" />
+            </div>
+        </div>
+
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <div class="sidebar">
+                <ul>
+                    <li class="item1">CHI TIẾT TÀI KHOẢN</li>
+                    <li class="item2">ĐỔI MẬT KHẨU</li>
+                    <li class="item3">ĐIỂM THƯỞNG</li>
+                    <li class="item4">THẺ THÀNH VIÊN</li>
+                    <li class="item5">VOUCHER</li>
+                    <li class="item6">THẺ QUÀ TẶNG</li>
+                    <li class="item7">CÀI MÃ THANH TOÁN</li>
+                </ul>
+            </div>
+
+            <div class="content">
+                <p>THÔNG TIN CÁ NHÂN</p>
+                <div class="info-avatar-container">
+                    <!-- Avatar bên trái -->
+                    <div class="avatar-section">
+                        <img id="avatarImage" src="../images/avatarcat.png" alt="Profile Picture">
+                        <button id="changeAvatarBtn" style="display: none; margin-top: 10px;">Thay đổi</button>
+                    </div>
+                    <!-- Popup upload ảnh -->
+                    <div class="popup-overlay" id="avatarPopup">
+                        <div class="popup-content">
+
+                            <label for="avatarInput" class="upload-btn">Tải từ thiết bị</label>
+                            <input type="file" id="avatarInput" accept="image/*" style="display: none;">
+                            <div id="dropZone" class="upload-area">
+                                <img src="../icons/editavatar.png" width="48">
+                                <h4>hoặc thả ảnh vào đây</h4>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="info-section">
+                        <div class="form-group">
+                            <label for="fullname" id="fullnameLabel">Họ và tên:</label>
+                            <div class="input-wrapper">
+                                <input type="text" id="fullname" value="Nguyễn Minh Chiến" readonly>
+                                <div class="error-message" id="fullnameError"></div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label id="genderLabel">Giới tính:</label>
+                            <div class="input-wrapper">
+                                <input type="radio" id="male" name="gender" value="Nam" checked disabled> Nam
+                                <input type="radio" id="female" name="gender" value="Nữ" disabled> Nữ
+                                <div class="error-message" id="genderError"></div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="dob">Ngày sinh:</label>
+                            <div class="input-wrapper">
+                                <input type="text" id="dob" name="dob" placeholder="dd/mm/yyyy" autocomplete="off">
+                                <div class="error-message" id="birthError"></div>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="phone">Số điện thoại:</label>
+                            <div class="input-wrapper">
+                                <input type="text" id="phone" value="0912345678" readonly>
+                                <div class="error-message" id="phoneError"></div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" id="emailLabel">Email:</label>
+                            <div class="input-wrapper">
+                                <input type="email" id="email" value="minhchiennguyen@gmail.com" readonly>
+                                <div class="error-message" id="emailError"></div>
+                            </div>
+                        </div>
+
+                        <div class="action-buttons">
+                            <a href="profile.html" id="backLink" style="display: none;">&laquo; Quay lại</a>
+                            <button id="editBtn">Chỉnh sửa</button>
+
+                        </div>
+                        <!-- Dòng chú thích -->
+                        <div id="requiredNote"
+                            style="display: none; color: red; margin-top: 40px; margin-bottom: -55px; margin-left: 105px;">
+                            * Thông tin bắt buộc
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+
+    </main>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-left">
+            <p><strong>CABA Việt Nam</strong></p>
+            <p>Địa chỉ: 175 Tây Sơn, Đống Đa, Hà Nội</p>
+            <p>Hotline: 1900 12356</p>
+            <p>Email: cabavietnam@gmail.com</p>
+        </div>
+        <div class="footer-center">
+            <p><strong>Điều khoản sử dụng</strong></p>
+            <p>Điều Khoản Chung</p>
+            <p>Điều Khoản Giao Dịch</p>
+            <p>Chính Sách Thanh Toán</p>
+        </div>
+        <div class="footer-center2">
+            <img src="../icons/bocongthuong.svg" alt="CABA Logo" />
+        </div>
+        <div class="footer-right">
+            <p><strong>Kết nối với chúng tôi</strong></p>
+            <div class="social-icons">
+                <img src="../icons/facebook.svg" alt="Facebook" />
+                <img src="../icons/insta.svg" alt="Instagram" />
+                <img src="../icons/tiktok.svg" alt="TikTok" />
+            </div>
+        </div>
+    </footer>
+
+    <!-- Popup xác nhận -->
+    <div id="confirmPopup" class="confirm-overlay">
+        <div class="confirm-content">
+            <div class="confirm-header">
+                Thông báo xác nhận
+                <button class="close-popup" onclick="closeConfirmPopup()">
+                    <img src="../icons/close.svg" />
+                </button>
+            </div>
+            <hr class="custom-line" />
+            <div class="confirm-body">
+                <img src="../icons/question.svg" width="48" alt="?" />
+                <p>Bạn chắc chắn muốn cập nhật thông tin cá nhân ?</p>
+            </div>
+            <div class="confirm-buttons">
+                <button class="btn-confirm" id="confirmBtn" onclick="handleConfirm()">Xác nhận</button>
+                <button class="btn-cancel" onclick="closeConfirmPopup()">Hủy bỏ</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Popup cảnh báo -->
+    <div id="warningPopup" class="confirm-overlay">
+        <div class="confirm-content">
+            <div class="confirm-header">
+                Thông báo
+                <button class="close-popup" pup') onclick="closePopup('warningPopup')">
+                    <img src="../icons/close.svg" />
+                </button>
+            </div>
+            <hr class="custom-line" />
+            <div class="ok-body">
+                <img src="../icons/error.svg" width="48" alt="?" />
+                <p>Bạn không được để trống trường bắt buộc</p>
+            </div>
+            <div class="ok-buttons">
+                <button class="btn-ok" onclick="closePopup('warningPopup')">OK</button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Popup thành công -->
+    <div id="successPopup" class="confirm-overlay">
+        <div class="confirm-content">
+            <div class="confirm-header">
+                Thông báo
+                <button class="close-popup" pup') onclick="closePopup('successPopup')">
+                    <img src="../icons/close.svg" />
+                </button>
+            </div>
+            <hr class="custom-line" />
+            <div class="ok-body">
+                <img src="../icons/success.svg" width="48" alt="?" />
+                <p>Cập nhật thông tin cá nhân thành công</p>
+            </div>
+            <div class="ok-buttons">
+                <button class="btn-ok" onclick="closePopup('successPopup')">OK</button>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
+<script>
+    // Hàm kiểm tra định dạng dd/mm/yyyy hợp lệ (gồm cả logic ngày tháng)
+    function isValidDateFormat(str) {
+        const [d, m, y] = str.split('/').map(Number);
+        const date = new Date(y, m - 1, d);
+        return (
+            date.getFullYear() === y &&
+            date.getMonth() === m - 1 &&
+            date.getDate() === d
+        );
+    }
+
+    // Khởi tạo Pikaday
+    const picker = new Pikaday({
+        field: document.getElementById('dob'),
+        format: 'DD/MM/YYYY',
+        toString(date, format) {
+            const dd = String(date.getDate()).padStart(2, '0');
+            const mm = String(date.getMonth() + 1).padStart(2, '0');
+            const yyyy = date.getFullYear();
+            return `${dd}/${mm}/${yyyy}`;
+        },
+        parse(dateString, format) {
+            const parts = dateString.split('/');
+            const d = parseInt(parts[0], 10);
+            const m = parseInt(parts[1], 10);
+            const y = parseInt(parts[2], 10);
+            return new Date(y, m - 1, d);
+        },
+        onClose: function () {
+            const dobValue = this.getField().value.trim();
+            const err = document.getElementById('birthError');
+            if (dobValue === "") {
+                err.textContent = ""; // không cần thiết lập lỗi nếu rỗng
+            } else if (!isValidDateFormat(dobValue)) {
+                err.textContent = "Vui lòng nhập đúng định dạng: dd/mm/yyyy";
+            } else {
+                err.textContent = "";
+            }
+        },
+        i18n: {
+            previousMonth: 'Tháng trước',
+            nextMonth: 'Tháng sau',
+            months: [
+                'Tháng 1', 'Tháng 2', 'Tháng 3', 'Tháng 4',
+                'Tháng 5', 'Tháng 6', 'Tháng 7', 'Tháng 8',
+                'Tháng 9', 'Tháng 10', 'Tháng 11', 'Tháng 12'
+            ],
+            weekdays: [
+                'Chủ Nhật', 'Thứ Hai', 'Thứ Ba', 'Thứ Tư',
+                'Thứ Năm', 'Thứ Sáu', 'Thứ Bảy'
+            ],
+            weekdaysShort: ['CN', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7']
+        },
+        firstDay: 1
+    });
+</script>
+
+<script>
+    const editBtn = document.getElementById("editBtn");
+    let isEditing = false;
+    let isFlatpickrInitialized = false;
+    let flatpickrInstance = null;
+
+
+    editBtn.addEventListener("click", function () {
+        const inputs = document.querySelectorAll(".info-section input");
+        const male = document.getElementById("male");
+        const female = document.getElementById("female");
+        const dobInput = document.getElementById("dob");
+        const backLink = document.getElementById("backLink");
+
+        if (!isEditing) {
+            // Bật chỉnh sửa
+            inputs.forEach(input => input.removeAttribute("readonly"));
+            dobInput.removeAttribute("readonly");
+            male.disabled = false;
+            female.disabled = false;
+            male.checked = false;
+            female.checked = false;
+            editBtn.textContent = "Lưu";
+            document.getElementById("changeAvatarBtn").style.display = "block";
+            editBtn.classList.add("save-mode");
+            document.getElementById("fullnameLabel").innerHTML = 'Họ và tên:<span style="color:red">*</span>';
+            document.getElementById("genderLabel").innerHTML = 'Giới tính:<span style="color:red">*</span>';
+            document.getElementById("emailLabel").innerHTML = 'Email:<span style="color:red">*</span>';
+            backLink.style.display = "inline-block";
+            requiredNote.style.display = "block";
+
+            isEditing = true;
+        } else {
+            // Validate
+            let isValid = true;
+
+            if (isValid) {
+                // Nếu hợp lệ, hiển thị popup xác nhận
+                showPopup("confirmPopup");
+            }
+        }
+    });
+
+    // Nút xác nhận trong popup xác nhận
+    function handleConfirm() {
+        closePopup("confirmPopup"); // Đóng popup xác nhận
+
+        // Xóa các thông báo lỗi cũ
+        document.querySelectorAll(".error-message").forEach(el => el.textContent = "");
+
+        // Lấy giá trị nhập vào
+        const fullname = document.getElementById("fullname");
+        const email = document.getElementById("email");
+        const dob = document.getElementById("dob").value.trim();
+        const phone = document.getElementById("phone");
+        const phoneValue = phone.value.trim();
+        const male = document.getElementById("male");
+        const female = document.getElementById("female");
+
+        // Regex kiểm tra
+        const dobRegex = /^\d{2}\/\d{2}\/\d{4}$/;
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        // Biến kiểm tra hợp lệ
+        let isValid = true;
+
+        // Kiểm tra Họ tên
+        if (fullname.value.trim() === "") {
+            document.getElementById("fullnameError").textContent = "Họ tên không chứa số hoặc ký tự đặc biệt.";
+            isValid = false;
+        } else if (!/^[A-Za-zÀ-ỹ\s]+$/.test(fullname.value.trim())) {
+            document.getElementById("fullnameError").textContent = "Họ tên không chứa số hoặc ký tự đặc biệt.";
+            isValid = false;
+        }
+
+        // Giới tính
+        if (!male.checked && !female.checked) {
+            document.getElementById("genderError").textContent = "Vui lòng chọn giới tính.";
+            isValid = false;
+        }
+
+        // Ngày sinh (không bắt buộc, nhưng nếu có thì phải đúng định dạng)
+        const dobValue = document.getElementById("dob").value.trim();
+        if (dobValue !== "" && !isValidDateFormat(dobValue)) {
+            document.getElementById("birthError").textContent = "Vui lòng nhập đúng định dạng: dd/mm/yyyy";
+            isValid = false;
+        }
+
+
+        // Số điện thoại (không bắt buộc, nhưng nếu có thì phải đúng định dạng)
+        if (phoneValue !== "") {
+            if (!phoneValue.startsWith("0") || phoneValue.length !== 10 || !/^\d+$/.test(phoneValue)) {
+                document.getElementById("phoneError").textContent = "Số điện thoại phải đủ 10 chữ số";
+                isValid = false;
+            }
+        }
+
+        // Email
+        if (!emailRegex.test(email.value.trim())) {
+            document.getElementById("emailError").textContent = "Địa chỉ email không hợp lệ";
+            isValid = false;
+        }
+
+        // Nếu không hợp lệ: hiện popup cảnh báo
+        if (!isValid) {
+            showPopup("warningPopup");
+            return;
+        }
+
+        // Nếu hợp lệ: hiện popup thành công
+        showPopup("successPopup");
+
+        // Tắt chế độ chỉnh sửa
+        document.querySelectorAll(".info-section input").forEach(input => input.setAttribute("readonly", true));
+        male.disabled = true;
+        female.disabled = true;
+        editBtn.textContent = "Chỉnh sửa";
+        isEditing = false;
+        backLink.style.display = "none";
+        requiredNote.style.display = "none";
+
+        if (flatpickrInstance) {
+            flatpickrInstance.destroy();
+            flatpickrInstance = null;
+            isFlatpickrInitialized = false;
+        }
+        // Cập nhật tên hiển thị
+        const displayNameDiv = document.querySelector(".user");
+        const fullNameParts = fullname.value.trim().split(" ");
+        if (fullNameParts.length >= 2) {
+            const nameWithoutSurname = fullNameParts.slice(1).join(" ");
+            displayNameDiv.textContent = nameWithoutSurname.toUpperCase();
+        } else {
+            displayNameDiv.textContent = fullname.value.trim().toUpperCase();
+        }
+
+        // Cập nhật nút
+        editBtn.textContent = "Chỉnh sửa";
+        editBtn.classList.remove("save-mode");
+        isEditing = false;
+        // Gán lại Flatpickr với format chuẩn để hiển thị đẹp
+        flatpickrInstance = flatpickr("#dob", {
+            dateFormat: "d/m/Y",
+            defaultDate: dob,
+            disableMobile: true
+        });
+        isFlatpickrInitialized = true;
+    }
+
+    function showPopup(id) {
+        document.getElementById(id).style.display = "flex";
+    }
+
+    function closePopup(id) {
+        document.getElementById(id).style.display = "none";
+    }
+
+    function closeConfirmPopup() {
+        closePopup("confirmPopup");
+    }
+
+    window.addEventListener("DOMContentLoaded", () => {
+        const dobInput = document.getElementById("dob");
+        dobInput.value = "10/05/2004";
+        dobInput.setAttribute("readonly", true);
+    });
+
+    backBtn.addEventListener("click", function () {
+        window.location.href = "profile.html";
+    });
+</script>
+
+
+<script>
+    const changeBtn = document.getElementById("changeAvatarBtn");
+    const popup = document.getElementById("avatarPopup");
+    const dropZone = document.getElementById("dropZone");
+    const inputFile = document.getElementById("avatarInput");
+    const avatarImage = document.getElementById("avatarImage");
+
+    // Hiển thị popup
+    changeBtn.addEventListener("click", () => {
+        popup.style.display = "flex";
+    });
+
+    // Tải từ thiết bị
+    inputFile.addEventListener("change", function () {
+        const file = this.files[0];
+        if (file && file.type.startsWith("image/")) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                avatarImage.src = e.target.result;
+                popup.style.display = "none";
+            };
+            reader.readAsDataURL(file);
+        }
+    });
+
+    // Kéo ảnh vào drop zone
+    dropZone.addEventListener("dragover", (e) => {
+        e.preventDefault();
+        dropZone.style.borderColor = "#000";
+    });
+
+    dropZone.addEventListener("dragleave", () => {
+        dropZone.style.borderColor = "#666";
+    });
+
+    dropZone.addEventListener("drop", (e) => {
+        e.preventDefault();
+        dropZone.style.borderColor = "#666";
+        const file = e.dataTransfer.files[0];
+        if (file && file.type.startsWith("image/")) {
+            const reader = new FileReader();
+            reader.onload = function (event) {
+                avatarImage.src = event.target.result;
+                popup.style.display = "none";
+            };
+            reader.readAsDataURL(file);
+        }
+    });
+
+    const avatarPopup = document.getElementById("avatarPopup");
+
+    avatarPopup.addEventListener("click", function (e) {
+        // Nếu click vào overlay (bên ngoài popup-content) thì đóng
+        if (e.target === avatarPopup) {
+            avatarPopup.style.display = "none";
+        }
+    });

@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Chi tiết phim</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    * {
+      font-family: 'Roboto', sans-serif;
+    }
+
+    body {
+
+      background-color: #fff;
+      color: #333;
+    }
+
+    /* === HEADER === */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #D9D9D9;
+      border-bottom: 1px solid #ddd;
+      padding: 2px 30px 0px 30px;
+      height: 56px;
+      margin-bottom: 5px;
+      /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); */
+    }
+
+
+    .navbar ul {
+      display: flex;
+      list-style: none;
+      gap: 40px;
+      padding: 0;
+      margin: 0 0 0 -215px;
+    }
+
+    .navbar ul li {
+      cursor: pointer;
+      font-weight: 500;
+      position: relative;
+      font-size: 14;
+      font-weight: 500;
+    }
+
+    .navbar ul li img {
+      padding-top: 3px;
+      width: 16px;
+      height: 16px;
+      margin-left: 5px;
+
+    }
+
+    .navbar ul li:hover {
+      color: #e43d3d;
+    }
+
+    .search-user {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .search-box {
+      display: flex;
+      align-items: center;
+      width: 252.5px;
+      height: 30px;
+      border-radius: 10px;
+      background: #FFF;
+      padding: 0 8px;
+      box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+    }
+
+    .search-icon img {
+      width: 25px;
+      height: 25px;
+      margin-top: 3px;
+    }
+
+    .notify-icon img {
+      width: 25px;
+      height: 25px;
+    }
+
+    .separator {
+      width: 1px;
+      height: 100%;
+      background-color: black;
+      margin: 0 8px;
+    }
+
+    .search-box input {
+      border: none;
+      outline: none;
+      flex: 1;
+      font-size: 14px;
+      background: transparent;
+    }
+
+    .user {
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .custom-line {
+      width: 100%;
+      height: 3px;
+      background-color: #D9D9D9;
+      border: none;
+      margin: 20px auto;
+      /* căn giữa và tạo khoảng cách phía trên/dưới */
+    }
+
+    .back-arrow {
+      position: absolute;
+      top: 80px;
+      left: 20px;
+      color: #333;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+
+    .back-arrow img {
+      width: 48px;
+      height: 48px;
+    }
+
+    .movie-detail-section {
+      display: flex;
+      padding: 40px 80px;
+      gap: 40px;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .poster-wrapper {
+      width: 236px;
+      height: 354px;
+      border-radius: 20px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .poster-detail {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .info-detail h2 {
+      /* Giữ nguyên kích thước font, nhưng tăng khoảng cách bên dưới */
+      color: #000;
+      font-family: Roboto;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      margin-bottom: 30px;
+      /* cách标题 30px */
+    }
+
+    .info-detail p {
+
+      margin: 0 0 10px;
+      /* tất cả các <p> sẽ cách nhau 19px */
+    }
+
+    strong {
+      color: #000;
+      /* màu đen cho label */
+    }
+
+    .movie-data {
+      color: #2357FF;
+      /* màu xanh cho dữ liệu */
+    }
+
+
+    /* Nếu bạn chỉ muốn áp dụng margin-bottom:19px cho đúng thẻ <p> chứa “Đạo diễn”, thêm class: */
+    .info-detail p.director {
+      margin-bottom: 19px;
+    }
+
+    .date-list {
+      display: flex;
+      gap: 85px;
+      margin-bottom: 20px;
+      margin-left: 80px;
+    }
+
+    .date-item {
+      width: 66px;
+      height: 50px;
+      cursor: pointer;
+      text-align: center;
+      font-weight: bold;
+      color: #333;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border-radius: 6px;
+      transition: background-color 0.2s ease;
+    }
+
+    .date-item:hover {
+      background-color: #f0f0f0;
+    }
+
+
+
+    .date-item.active {
+      color: #4285f4;
+    }
+
+    .date-item.active::after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 7px;
+      background-color: #4285f4;
+      margin-top: 3px;
+    }
+
+    .showtimes {
+      margin-left: 80px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .showtime-group h4 {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    .time-buttons {
+      display: flex;
+      gap: 44px;
+      flex-wrap: wrap;
+    }
+
+    .time-button {
+      width: 115px;
+      height: 39px;
+      flex-shrink: 0;
+      background: #D9D9D9;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .time-button:hover {
+      background: #bcd4fa;
+    }
+
+    .movie-description {
+      font-family: Roboto;
+      font-size: 20px;
+      margin-bottom: 19px;
+      line-height: 1.5;
+    }
+
+    .info-row {
+      display: flex;
+      margin-bottom: 10px;
+      gap: 12px;
+    }
+
+    .info-row strong {
+      width: 160px;
+      color: #000;
+      font-weight: 600;
+    }
+
+    .info-row span {
+      color: #2357FF;
+      flex: 1;
+    }
+
+    .dropdown-results {
+      position: absolute;
+      top: 110%;
+      /* ngay dưới search box */
+      left: 0;
+      width: 100%;
+      background: #B0ACAC;
+      border-radius: 8px;
+      padding: 10px;
+      z-index: 1000;
+      display: none;
+      max-height: 300px;
+      overflow-y: auto;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .dropdown-results h4 {
+      color: black;
+      margin: 0 0 10px;
+    }
+
+    .movies-item {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 10px;
+      background: transparent;
+      border-radius: 5px;
+      padding: 5px;
+      align-items: center;
+    }
+
+    .movies-item img {
+      width: 50px;
+      height: 70px;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+
+    .movies-info {
+      color: black;
+    }
+
+    .movies-info h3 {
+      margin: 0;
+      font-size: 15px;
+    }
+
+    .movies-info p {
+      margin: 4px 0 0;
+      font-size: 13px;
+    }
+
+    .not-found {
+      color: white;
+      font-size: 14px;
+      text-align: center;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="navbar">
+    <div class="logo"><img src="icons\logo.svg" /></div>
+    <nav>
+      <ul>
+        <a href="../index.html" style="text-decoration: none; color: inherit;">
+          <li>TRANG CHỦ</li>
+        </a>
+        <a href="../movies.html" style="text-decoration: none; color: inherit;">
+          <li>PHIM</li>
+        </a>
+        <li>TIN MỚI</li>
+        <a href="../HistoryBooking/history.html" style="text-decoration: none; color: inherit;">
+          <li>VÉ CỦA TÔI</li>
+        </a>
+        <li>CABA HOÀNG MAI <img src="icons\dropdown.svg" alt="Search" /></li>
+      </ul>
+    </nav>
+    <div class="search-user">
+      <div class="search-box" style="position: relative;">
+        <div class="search-icon">
+          <img src="icons/search.svg" alt="Search" />
+        </div>
+        <div class="separator"></div>
+        <input type="text" id="searchInput" placeholder="Tìm kiếm..." />
+
+        <div id="dropdownResults" class="dropdown-results"></div>
+      </div>
+
+      <div class="notify-icon">
+        <img src="icons/notify.svg" alt="Notify Icon" />
+      </div>
+      <div class="user">MINH CHIẾN</div>
+      <div class="user-icon">
+        <img src="icons/avatar.svg" alt="User Icon" />
+      </div>
+    </div>
+
+  </header>
+  <div class="back-arrow" onclick="window.history.back();">
+    <img src="icons/back.png" alt="" style="width: 32px;height: 32px;flex-shrink: 0;aspect-ratio: 24.78/24.78;">
+  </div>
+  <!-- Phần chi tiết phim -->
+  <section id="movieDetail" class="movie-detail-section"></section>
+  <!-- Danh sách ngày chiếu -->
+  <div class="date-list" id="dateList"></div>
+  <hr class="custom-line" />
+  <!-- Giờ chiếu -->
+  <div class="showtimes" id="showtimes"></div>
+
+  <script>
+    // 1) Dữ liệu phim (phải có trường code và genre là mảng)
+    const movies = [
+      {
+        name: "Doraemon: Nobita Và Cuộc Phiêu Lưu Vào Thế Giới Trong Tranh",
+        code: "T18",
+        year: "2025",
+        duration: "1h45p",
+        durationMinutes: 105,
+        poster: "images/movies/dora.png",
+        genre: ["Hoạt hình", "Phiêu lưu"],
+        director: "Yukiyo Teramoto",
+        cast: ["Wasabi Mizuta", "Megumi Ōhara", "Yumi Kakazu", "Subaru Kimura", "Tomokazu Seki"],
+        language: "Tiếng Nhật",
+        releaseDate: "29/05/2025",
+        description:
+          "Thông qua món bảo bối mới của Doraemon, cả nhóm bạn bước vào thế giới trong một bức tranh nổi tiếng và bắt gặp cô bạn bí ẩn tên Claire. Cùng đến vương quốc Artoria để tìm viên ngọc Artoria Blue, nhóm phát hiện ra một truyền thuyết hủy diệt đang sống lại. Liệu họ có phá giải được lời nguyền và bảo vệ thế giới?",
+        showtimes: {
+          "01/06/2025": {
+            IMAX: ["18:30", "20:40", "22:45"],
+            "3D": ["19:00", "21:40", "23:00"]
+          },
+          "02/06/2025": {
+            IMAX: ["17:30", "19:40"],
+            "3D": ["20:00", "22:00"]
+          },
+          "03/06/2025": {
+            IMAX: ["18:00", "21:00"],
+            "3D": ["19:30"]
+          }
+        }
+      },
+      {
+        name: "Lilo & Stitch",
+        code: "VN01",
+        year: "2021",
+        duration: "1h58p",
+        durationMinutes: 118,
+        poster: "images/movies/film2.png",
+        genre: ["Hoạt hình", "Gia đình"],
+        director: "Dean DeBlois, Chris Sanders",
+        cast: ["Daveigh Chase", "Chris Sanders", "Tia Carrere"],
+        language: "Tiếng Anh",
+        releaseDate: "01/06/2021",
+        description:
+          "Một cô bé mồ côi tên Lilo tình cờ gặp một sinh vật ngoài hành tinh bị thất lạc – Stitch. Hai tâm hồn cô đơn gắn kết và cùng nhau tạo nên một gia đình kỳ lạ nhưng đầy yêu thương.",
+        showtimes: {
+          "01/06/2021": {
+            IMAX: ["17:30", "20:00"],
+            "3D": ["18:45", "21:15"]
+          }
+        }
+      },
+      {
+        name: "Lật Mặt 8: Vòng Tay Nâng",
+        code: "VN02",
+        year: "2024",
+        duration: "2h01p",
+        durationMinutes: 121,
+        poster: "images/movies/film3.png",
+        genre: ["Hành động", "Tâm lý"],
+        director: "Lý Hải",
+        cast: ["Ốc Thanh Vân", "Huy Khánh", "Huỳnh Đông"],
+        language: "Tiếng Việt",
+        releaseDate: "26/04/2024",
+        description:
+          "Phần 8 của loạt phim 'Lật Mặt', tiếp tục kể về những mối quan hệ gia đình, lòng tin và sự phản bội. Khi những bí mật trong quá khứ được phơi bày, mọi thứ đều có thể bị đánh đổi.",
+        showtimes: {
+          "26/04/2024": {
+            "2D": ["16:00", "19:00", "21:30"]
+          }
+        }
+      },
+      {
+        name: "Dế Mèn: Cuộc Phiêu Lưu",
+        code: "VN03",
+        year: "2023",
+        duration: "1h50p",
+        durationMinutes: 110,
+        poster: "images/movies/film4.png",
+        genre: ["Hoạt hình", "Phiêu lưu"],
+        director: "Nguyễn Quang Dũng",
+        cast: ["Lồng tiếng bởi nhiều nghệ sĩ Việt"],
+        language: "Tiếng Việt",
+        releaseDate: "10/09/2023",
+        description:
+          "Dựa theo tác phẩm nổi tiếng 'Dế Mèn Phiêu Lưu Ký', bộ phim hoạt hình Việt Nam đưa người xem theo chân Dế Mèn trong hành trình khám phá thế giới và khám phá giá trị bản thân.",
+        showtimes: {
+          "10/09/2023": {
+            "2D": ["15:00", "17:30", "20:00"]
+          }
+        }
+      },
+      {
+        name: "Dan Dan Dan: Tà Nhãn",
+        code: "VN04",
+        year: "2023",
+        duration: "1h42p",
+        durationMinutes: 102,
+        poster: "images/movies/film7.png",
+        genre: ["Hoạt hình", "Hài", "Hành động", "Siêu nhiên"],
+        director: "Fuga Yamashiro",
+        cast: ["Shion Wakayama", "Toshiyuki Toyonaga", "Mikako Komatsu"],
+        language: "Tiếng Nhật",
+        releaseDate: "15/07/2023",
+        description:
+          "Một cô gái tin vào linh hồn và một chàng trai tin vào người ngoài hành tinh bất ngờ bị cuốn vào chuỗi sự kiện kỳ lạ liên quan đến thế lực siêu nhiên và người ngoài hành tinh. Họ phải chiến đấu để bảo vệ nhau và giải mã thế giới chưa từng thấy.",
+        showtimes: {
+          "01/06/2021": {
+            IMAX: ["17:30", "20:00"],
+            "3D": ["18:45", "21:15"]
+          }
+        }
+      },
+      {
+        name: "Mang Mẹ Đi Bỏ",
+        code: "VN05",
+        year: "2023",
+        duration: "1h48p",
+        durationMinutes: 108,
+        poster: "images/movies/film10.png",
+        genre: ["Hoạt hình", "Gia đình", "Tình cảm"],
+        director: "Trần Khánh Duy",
+        cast: ["Lồng tiếng bởi nghệ sĩ Việt như Hồng Ánh, Quốc Khánh"],
+        language: "Tiếng Việt",
+        releaseDate: "20/10/2023",
+        description:
+          "Bé Mít lên kế hoạch 'mang mẹ đi bỏ' vì tức giận với những quy định nghiêm khắc. Trên hành trình đó, bé dần nhận ra những hi sinh thầm lặng của mẹ và học cách trưởng thành, yêu thương và tha thứ.",
+        showtimes: {
+          "01/06/2021": {
+            IMAX: ["17:30", "20:00"],
+            "3D": ["18:45", "21:15"]
+          }
+        }
+      }
+    ];
+    const searchInput = document.getElementById("searchInput");
+    const dropdown = document.getElementById("dropdownResults");
+
+    searchInput.addEventListener("input", () => {
+      const keyword = searchInput.value.toLowerCase().trim();
+      dropdown.innerHTML = "";
+      dropdown.style.display = "block";
+
+      if (keyword === "") {
+        dropdown.style.display = "none";
+        return;
+      }
+
+      const filtered = movies.filter(movie =>
+        movie.name.toLowerCase().includes(keyword)
+      );
+
+      dropdown.innerHTML = `<h4>Danh sách phim</h4>`;
+
+      if (filtered.length === 0) {
+        dropdown.innerHTML += `<div class="not-found">Rất tiếc, không tìm thấy phim phù hợp với lựa chọn của bạn</div>`;
+      } else {
+        filtered.forEach(movie => {
+          const movieItem = document.createElement("div");
+          movieItem.className = "movies-item";
+          movieItem.setAttribute("data-code", movie.code);
+          movieItem.innerHTML = `
+      <img src="${movie.poster}" alt="${movie.name}">
+      <div class="movies-info">
+          <h3>${movie.name}</h3>
+          <p>${movie.code} • ${movie.year} • ${movie.duration}</p>
+      </div>
+  `;
+          movieItem.addEventListener("click", () => {
+            window.location.href = `chitietmovie.html?code=${movie.code}`;
+          });
+          dropdown.appendChild(movieItem);
+        });
+      }
+    });
+
+    // Ẩn dropdown khi click ra ngoài
+    document.addEventListener("click", function (event) {
+      const isClickInside = searchInput.parentElement.contains(event.target);
+      if (!isClickInside) {
+        dropdown.style.display = "none";
+      }
+    });
+
+    // 2) Lấy code từ URL
+    function getQueryParam(name) {
+      return new URLSearchParams(window.location.search).get(name);
+    }
+    const code = getQueryParam("code");
+    const movie = movies.find(m => m.code === code);
+
+    // 3) Render chi tiết
+    function renderMovieDetail(m) {
+      const c = document.getElementById("movieDetail");
+      if (!m) {
+        c.innerHTML = "<h1>Không tìm thấy thông tin phim</h1>"; return;
+      }
+      c.innerHTML = `
+        <div class="poster-wrapper">
+  <img src="${m.poster}" alt="${m.name}" class="poster-detail" />
+</div>
+
+        <div class="info-detail">
+          <h2>${m.name}</h2>
+          <p class="movie-description">${m.description}</p>
+<div class="info-row"><strong>ĐẠO DIỄN:</strong><span>${m.director}</span></div>
+<div class="info-row"><strong>DIỄN VIÊN:</strong><span>${m.cast.join(", ")}</span></div>
+<div class="info-row"><strong>THỂ LOẠI:</strong><span>${m.genre.join(", ")}</span></div>
+<div class="info-row"><strong>THỜI LƯỢNG:</strong><span>${m.duration}</span></div>
+<div class="info-row"><strong>NGÔN NGỮ:</strong><span>${m.language}</span></div>
+<div class="info-row"><strong>NGÀY KHỞI CHIẾU:</strong><span>${m.releaseDate}</span></div>
+        </div>
+      `;
+    }
+
+    // 4) Format ngày thành dd/mm và thứ
+    function formatDate(dt) {
+      const d = new Date(dt);
+      const day = String(d.getDate()).padStart(2, "0");
+      const mon = String(d.getMonth() + 1).padStart(2, "0");
+      const wd = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"][d.getDay()];
+      return { label: `${day}/${mon}`, weekday: wd };
+    }
+
+    // 5) Render date picker
+    function renderDatePicker(showtimes) {
+      const dl = document.getElementById("dateList");
+      dl.innerHTML = "";
+      const dates = Object.keys(showtimes);
+      dates.forEach((dt, i) => {
+        const { label, weekday } = formatDate(dt);
+        const div = document.createElement("div");
+        div.className = "date-item" + (i === 0 ? " active" : "");
+        div.innerHTML = `<div>${label}</div><div>${weekday}</div>`;
+        div.dataset.date = dt;
+        div.onclick = () => {
+          document.querySelectorAll(".date-item").forEach(e => e.classList.remove("active"));
+          div.classList.add("active");
+          renderShowtimes(showtimes, dt);
+        };
+        dl.appendChild(div);
+      });
+      if (dates.length > 0) renderShowtimes(showtimes, dates[0]);
+    }
+
+    // 6) Render showtimes
+    function renderShowtimes(showtimes, date) {
+      const sw = document.getElementById("showtimes");
+      sw.innerHTML = "";
+      const data = showtimes[date] || {};
+      for (const fmt in data) {
+        const grp = document.createElement("div");
+        grp.className = "showtime-group";
+        grp.innerHTML = `<h4>${fmt}</h4>`;
+        const btns = document.createElement("div");
+        btns.className = "time-buttons";
+        data[fmt].forEach(t => {
+          const b = document.createElement("div");
+          b.className = "time-button";
+          b.textContent = t;
+          btns.appendChild(b);
+        });
+        grp.appendChild(btns);
+        sw.appendChild(grp);
+      }
+    }
+
+    // 7) Khởi tạo
+    renderMovieDetail(movie);
+    if (movie) renderDatePicker(movie.showtimes);
+  </script>
+</body>
+
+</html>

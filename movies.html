@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <title>CABA Cinema</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+  <link rel="stylesheet" href="../css/movie.css">
+
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header class="navbar">
+    <div class="logo"><img src="../icons/logo.svg" /></div>
+    <nav>
+      <ul>
+        <a href="../index.html" style="text-decoration: none; color: inherit;">
+          <li>TRANG CHỦ</li>
+        </a>
+        <a href="../movies.html" style="text-decoration: none; color: inherit;">
+          <li style="font-weight: bold; color: red;">PHIM</li>
+        </a>
+        <li>TIN MỚI</li>
+        <a href="../HistoryBooking/history.html" style="text-decoration: none; color: inherit;">
+          <li>VÉ CỦA TÔI</li>
+        </a>
+        <li>CABA HOÀNG MAI <img src="icons\dropdown.svg" alt="Search" /></li>
+      </ul>
+    </nav>
+    <div class="search-user">
+      <div class="search-box" style="position: relative;">
+        <div class="search-icon">
+          <img src="icons/search.svg" alt="Search" />
+        </div>
+        <div class="separator"></div>
+        <input type="text" id="searchInput" placeholder="Tìm kiếm..." />
+
+        <div id="dropdownResults" class="dropdown-results"></div>
+      </div>
+      <div class="notify-icon">
+        <img src="../icons/notify.svg" alt="Notify Icon" />
+      </div>
+      <div class="user">MINH CHIẾN</div>
+      <div class="user-icon">
+        <img src="../icons/avatar.svg" alt="User Icon" />
+      </div>
+    </div>
+
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <section class="movie-section">
+
+      <div class="movie-header">
+        <h3>Tìm phim chiếu rạp</h3>
+        <!-- Thanh tìm kiếm và bộ lọc -->
+        <div class="movie-filter-bar">
+          <div class="search-input-wrapper">
+            <div class="searchs-icon">
+              <img src="../icons/search.svg" alt="Search" />
+            </div>
+            <div class="separator"></div>
+            <input type="text" id="movieSearchInput" placeholder="Tìm kiếm..." />
+          </div>
+
+          <select id="genreFilter">
+            <option value="">Thể loại: Tất cả</option>
+            <option value="Hành động">Hành động</option>
+            <option value="Hài">Hài</option>
+            <option value="Hoạt hình">Hoạt hình</option>
+            <option value="Tình cảm">Tình cảm</option>
+            <option value="Kinh dị">Kinh dị</option>
+          </select>
+          <select>
+            <option>Sắp xếp: Mới nhất</option>
+            <option>Cũ nhất</option>
+            <option>Phổ biến</option>
+          </select>
+        </div>
+      </div>
+      <div class="coming-wrapper">
+        <button class="showing-arrow showing-left" onclick="prevSlide()">
+          <img src="icons/arrowleft.svg" alt="Previous" />
+        </button>
+
+        <div class="movie-carousel-container">
+          <div class="movie-carousel" id="coming-carousel">
+            <div class="movie-item" onclick="toggleButtons(this)">
+              <!-- <div class="movie-thumbnail">
+                            <img src="images/movies/dora.png" alt="Phim 1">
+                        </div>
+                        <p>DORAEMON: NOBITA VÀ CU...</p> -->
+            </div>
+
+            <div class="movie-item" onclick="toggleButtons(this)">
+              <!-- <div class="movie-thumbnail">
+                            <img src="images/movies/film2.png" alt="Phim 2">
+                        </div>
+                        <p>LILO & STITCH</p> -->
+            </div>
+
+            <div class="movie-item" onclick="toggleButtons(this)">
+              <!-- <div class="movie-thumbnail">
+                            <img src="images/movies/film3.png" alt="Phim 3">
+                        </div>
+                        <p>LẬT MẶT 8: VÒNG TAY NÂNG</p> -->
+            </div>
+
+            <div class="movie-item" onclick="toggleButtons(this)">
+              <!-- <div class="movie-thumbnail">
+                            <img src="images/movies/film4.png" alt="Phim 4">
+                        </div>
+                        <p>DẾ MÈN: CUỘC PHIÊU LƯU</p> -->
+            </div>
+          </div>
+        </div>
+
+        <button class="showing-arrow showing-right" onclick="nextSlide()">
+          <img src="icons/arrowright.svg" alt="Next" />
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const movies = [
+      {
+        name: "Doraemon: Nobita Và Cuộc Phiêu Lưu Vào Thế Giới Trong Tranh",
+        code: "T18",
+        year: "2025",
+        duration: "1h45p",
+        durationMinutes: 105,
+        poster: "images/movies/dora.png",
+        genre: ["Hoạt hình", "Phiêu lưu"],
+        director: "Yukiyo Teramoto",
+        cast: ["Wasabi Mizuta", "Megumi Ōhara", "Yumi Kakazu", "Subaru Kimura", "Tomokazu Seki"],
+        language: "Tiếng Nhật",
+        releaseDate: "29/05/2025",
+        description:
+          "Thông qua món bảo bối mới của Doraemon, cả nhóm bạn bước vào thế giới trong một bức tranh nổi tiếng và bắt gặp cô bạn bí ẩn tên Claire. Cùng đến vương quốc Artoria để tìm viên ngọc Artoria Blue, nhóm phát hiện ra một truyền thuyết hủy diệt đang sống lại. Liệu họ có phá giải được lời nguyền và bảo vệ thế giới?",
+        showtimes: {
+          "01/06/2025": {
+            IMAX: ["18:30", "20:40", "22:45"],
+            "3D": ["19:00", "21:40", "23:00"]
+          },
+          "02/06/2025": {
+            IMAX: ["17:30", "19:40"],
+            "3D": ["20:00", "22:00"]
+          },
+          "03/06/2025": {
+            IMAX: ["18:00", "21:00"],
+            "3D": ["19:30"]
+          }
+        }
+      },
+      {
+        name: "Lilo & Stitch",
+        code: "VN01",
+        year: "2021",
+        duration: "1h58p",
+        durationMinutes: 118,
+        poster: "images/movies/film2.png",
+        genre: ["Hoạt hình", "Gia đình"],
+        director: "Dean DeBlois, Chris Sanders",
+        cast: ["Daveigh Chase", "Chris Sanders", "Tia Carrere"],
+        language: "Tiếng Anh",
+        releaseDate: "01/06/2021",
+        description:
+          "Một cô bé mồ côi tên Lilo tình cờ gặp một sinh vật ngoài hành tinh bị thất lạc – Stitch. Hai tâm hồn cô đơn gắn kết và cùng nhau tạo nên một gia đình kỳ lạ nhưng đầy yêu thương.",
+        showtimes: {
+          "01/06/2021": {
+            IMAX: ["17:30", "20:00"],
+            "3D": ["18:45", "21:15"]
+          }
+        }
+      },
+      {
+        name: "Lật Mặt 8: Vòng Tay Nâng",
+        code: "VN02",
+        year: "2024",
+        duration: "2h01p",
+        durationMinutes: 121,
+        poster: "images/movies/film3.png",
+        genre: ["Hành động", "Tâm lý"],
+        director: "Lý Hải",
+        cast: ["Ốc Thanh Vân", "Huy Khánh", "Huỳnh Đông"],
+        language: "Tiếng Việt",
+        releaseDate: "26/04/2024",
+        description:
+          "Phần 8 của loạt phim 'Lật Mặt', tiếp tục kể về những mối quan hệ gia đình, lòng tin và sự phản bội. Khi những bí mật trong quá khứ được phơi bày, mọi thứ đều có thể bị đánh đổi.",
+        showtimes: {
+          "26/04/2024": {
+            "2D": ["16:00", "19:00", "21:30"]
+          }
+        }
+      },
+      {
+        name: "Dế Mèn: Cuộc Phiêu Lưu",
+        code: "VN03",
+        year: "2023",
+        duration: "1h50p",
+        durationMinutes: 110,
+        poster: "images/movies/film4.png",
+        genre: ["Hoạt hình", "Phiêu lưu"],
+        director: "Nguyễn Quang Dũng",
+        cast: ["Lồng tiếng bởi nhiều nghệ sĩ Việt"],
+        language: "Tiếng Việt",
+        releaseDate: "10/09/2023",
+        description:
+          "Dựa theo tác phẩm nổi tiếng 'Dế Mèn Phiêu Lưu Ký', bộ phim hoạt hình Việt Nam đưa người xem theo chân Dế Mèn trong hành trình khám phá thế giới và khám phá giá trị bản thân.",
+        showtimes: {
+          "10/09/2023": {
+            "2D": ["15:00", "17:30", "20:00"]
+          }
+        }
+      },
+      {
+        name: "Dan Dan Dan: Tà Nhãn",
+        code: "VN04",
+        year: "2023",
+        duration: "1h42p",
+        durationMinutes: 102,
+        poster: "images/movies/film7.png",
+        genre: ["Hoạt hình", "Hài", "Hành động", "Siêu nhiên"],
+        director: "Fuga Yamashiro",
+        cast: ["Shion Wakayama", "Toshiyuki Toyonaga", "Mikako Komatsu"],
+        language: "Tiếng Nhật",
+        releaseDate: "15/07/2023",
+        description:
+          "Một cô gái tin vào linh hồn và một chàng trai tin vào người ngoài hành tinh bất ngờ bị cuốn vào chuỗi sự kiện kỳ lạ liên quan đến thế lực siêu nhiên và người ngoài hành tinh. Họ phải chiến đấu để bảo vệ nhau và giải mã thế giới chưa từng thấy.",
+        showtimes: {
+          "01/06/2021": {
+            IMAX: ["17:30", "20:00"],
+            "3D": ["18:45", "21:15"]
+          }
+        }
+      },
+      {
+        name: "Mang Mẹ Đi Bỏ",
+        code: "VN05",
+        year: "2023",
+        duration: "1h48p",
+        durationMinutes: 108,
+        poster: "images/movies/film10.png",
+        genre: ["Hoạt hình", "Gia đình", "Tình cảm"],
+        director: "Trần Khánh Duy",
+        cast: ["Lồng tiếng bởi nghệ sĩ Việt như Hồng Ánh, Quốc Khánh"],
+        language: "Tiếng Việt",
+        releaseDate: "20/10/2023",
+        description:
+          "Bé Mít lên kế hoạch 'mang mẹ đi bỏ' vì tức giận với những quy định nghiêm khắc. Trên hành trình đó, bé dần nhận ra những hi sinh thầm lặng của mẹ và học cách trưởng thành, yêu thương và tha thứ.",
+        showtimes: {
+          "01/06/2021": {
+            IMAX: ["17:30", "20:00"],
+            "3D": ["18:45", "21:15"]
+          }
+        }
+      }
+    ];
+
+
+    // Tìm kiếm trên navbar
+    const searchInput = document.getElementById("searchInput");
+    const dropdown = document.getElementById("dropdownResults");
+
+    searchInput.addEventListener("input", () => {
+      const keyword = searchInput.value.toLowerCase().trim();
+      dropdown.innerHTML = "";
+      dropdown.style.display = "block";
+
+      if (keyword === "") {
+        dropdown.style.display = "none";
+        return;
+      }
+
+      const filtered = movies.filter(movie =>
+        movie.name.toLowerCase().includes(keyword)
+      );
+
+      dropdown.innerHTML = `<h4>Danh sách phim</h4>`;
+
+      if (filtered.length === 0) {
+        dropdown.innerHTML += `<div class="not-found">Rất tiếc, không tìm thấy phim phù hợp với lựa chọn của bạn</div>`;
+      } else {
+        filtered.forEach(movie => {
+          const movieItem = document.createElement("div");
+          movieItem.className = "movies-item";
+          movieItem.setAttribute("data-code", movie.code);
+          movieItem.innerHTML = `
+      <img src="${movie.poster}" alt="${movie.name}">
+      <div class="movies-info">
+          <h3>${movie.name}</h3>
+          <p>${movie.code} • ${movie.year} • ${movie.duration}</p>
+      </div>
+  `;
+          movieItem.addEventListener("click", () => {
+            window.location.href = `chitietmovie.html?code=${movie.code}`;
+          });
+          dropdown.appendChild(movieItem);
+        });
+
+
+      }
+    });
+
+    // Ẩn dropdown khi click ra ngoài
+    document.addEventListener("click", function (event) {
+      const isClickInside = searchInput.parentElement.contains(event.target);
+      if (!isClickInside) {
+        dropdown.style.display = "none";
+      }
+    });
+
+    //Tìm kiếm nâng cao
+    const carousel = document.getElementById("coming-carousel");
+    const movieSearchInput = document.getElementById("movieSearchInput");
+    const genreFilter = document.getElementById("genreFilter");
+
+    let filteredMovies = [...movies];
+    let currentIndex = 0;
+    const pageSize = 4;
+
+    function renderMovies() {
+      carousel.innerHTML = "";
+
+      if (filteredMovies.length === 0) {
+        carousel.innerHTML = `<h3>Không tìm thấy phim phù hợp</h3>`;
+        return;
+      }
+
+      const page = filteredMovies.slice(currentIndex, currentIndex + pageSize);
+
+      page.forEach(movie => {
+        carousel.innerHTML += `
+          <div class="movie-item" data-code="${movie.code}">
+            <div class="movie-thumbnail">
+              <img src="${movie.poster}" alt="${movie.name}" />
+            </div>
+            <p>${movie.name.length > 25 ? movie.name.slice(0, 25) + "..." : movie.name}</p>
+          </div>
+        `;
+      });
+    }
+
+    function applyFilters() {
+      const keyword = movieSearchInput.value.toLowerCase().trim();
+      const selectedGenre = genreFilter.value;
+
+      filteredMovies = movies.filter(movie =>
+        (keyword === "" || movie.name.toLowerCase().includes(keyword)) &&
+        (selectedGenre === "" || movie.genre.includes(selectedGenre))
+      );
+
+      currentIndex = 0; // reset lại trang
+      renderMovies();
+    }
+
+    function nextSlide() {
+      if (currentIndex + pageSize < filteredMovies.length) {
+        currentIndex += 1;
+        renderMovies();
+      }
+    }
+
+    function prevSlide() {
+      if (currentIndex > 0) {
+        currentIndex -= 1;
+        renderMovies();
+      }
+    }
+
+    movieSearchInput.addEventListener("input", applyFilters);
+    genreFilter.addEventListener("change", applyFilters);
+
+    document.addEventListener("click", function (e) {
+      const movieItem = e.target.closest(".movie-item");
+      if (movieItem && movieItem.dataset.code) {
+        window.location.href = `chitietmovie.html?code=${movieItem.dataset.code}`;
+      }
+    });
+
+    // Khởi tạo lần đầu
+    renderMovies();
+    const sortSelect = document.querySelector(".movie-filter-bar select:nth-child(3)");
+    sortSelect.addEventListener("change", () => {
+      const value = sortSelect.value;
+      if (value === "Mới nhất") {
+        filteredMovies.sort((a, b) => b.year.localeCompare(a.year));
+      } else if (value === "Cũ nhất") {
+        filteredMovies.sort((a, b) => a.year.localeCompare(b.year));
+      }
+      renderMovies();
+    });
+
+  </script>
+
+</html>

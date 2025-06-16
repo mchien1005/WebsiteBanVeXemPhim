@@ -1,0 +1,345 @@
+/* Đặt font chữ chung và reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+
+    background-color: #fff;
+    color: #333;
+}
+
+/* === HEADER === */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #D9D9D9;
+    border-bottom: 1px solid #ddd;
+    padding: 2px 30px 0px 30px;
+    height: 56px;
+    margin-bottom: 5px;
+    /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); */
+}
+
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+    padding: 0;
+    margin: 0 0 0 -215px;
+}
+
+.navbar ul li {
+    cursor: pointer;
+    font-weight: 500;
+    position: relative;
+    font-size: 14;
+    font-weight: 500;
+}
+
+.navbar ul li img {
+    padding-top: 3px;
+    width: 16px;
+    height: 16px;
+    margin-left: 5px;
+
+}
+
+.navbar ul li:hover {
+    color: #e43d3d;
+}
+
+.search-user {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    width: 252.5px;
+    height: 30px;
+    border-radius: 10px;
+    background: #FFF;
+    padding: 0 8px;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+.search-icon img {
+    width: 25px;
+    height: 25px;
+    margin-top: 3px;
+}
+
+.notify-icon img {
+    width: 25px;
+    height: 25px;
+}
+
+.separator {
+    width: 1px;
+    height: 100%;
+    background-color: black;
+    margin: 0 8px;
+}
+
+.search-box input {
+    border: none;
+    outline: none;
+    flex: 1;
+    font-size: 14px;
+    background: transparent;
+}
+
+.user {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.custom-line {
+    width: 1200px;
+    height: 3px;
+    background-color: #D9D9D9;
+    border: none;
+    margin: 20px auto;
+    /* căn giữa và tạo khoảng cách phía trên/dưới */
+}
+
+
+
+/* === MOVIE SECTIONS === */
+.movie-section {
+    width: 95%;
+    margin: 150px auto;
+}
+
+.movie-section h2 {
+    margin-bottom: 30px;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: left;
+}
+
+.movie-item p {
+    color: #000;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    /* In đậm */
+    line-height: normal;
+    width: 225px;
+    height: 16px;
+    flex-shrink: 0;
+    text-transform: uppercase;
+    /* Viết hoa */
+    margin-top: 8px;
+    text-align: left;
+    /* Không căn giữa */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.movie-carousel-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    margin-top: 10px;
+    margin-left: 106px;
+}
+
+.movie-carousel {
+    display: flex;
+    gap: 100px;
+    transition: transform 0.5s ease;
+    overflow: hidden;
+}
+
+.movie-item {
+    width: 224.34px;
+    height: 336.51px;
+    flex-shrink: 0;
+    text-align: center;
+    display: block;
+}
+
+.movie-item img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.movie-item {
+    position: relative;
+    height: auto;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.movie-item img {
+    display: block;
+}
+
+/* Button đè lên ảnh */
+.movie-thumbnail {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.movie-thumbnail img {
+    width: 100%;
+    display: block;
+}
+
+/* Nút nằm ngang dưới ảnh */
+.movie-buttons {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* .movie-buttons button {
+    padding: 6px 12px;
+    background-color: #f90;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+} */
+
+.movie-item.show-buttons .movie-buttons {
+    opacity: 1;
+}
+
+.svg-button {
+    position: relative;
+    width: 56px;
+    height: 24px;
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.svg-button img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.svg-button span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-weight: bold;
+    pointer-events: none;
+    font-size: 8px;
+}
+
+.showing-arrow {
+    position: absolute;
+    top: 430px;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+    padding: 6px;
+    border-radius: 50%;
+    transition: background 0.3s;
+}
+
+
+.showing-left {
+    left: 40px;
+    /* ra ngoài banner */
+}
+
+.showing-right {
+    right: 40px;
+}
+
+.showing-arrow:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.movie-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.movie-header h2 {
+    font-size: 14px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.movie-filter-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-input-wrapper {
+    display: flex;
+    align-items: center;
+    width: 252.5px;
+    height: 30px;
+    background: #D6D6D6;
+    padding: 0 8px;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+
+.search-input-wrapper img {
+    width: 26px;
+    height: 26px;
+    margin-right: 4px;
+}
+
+.search-input-wrapper input {
+    border: none;
+    background: transparent;
+    outline: none;
+    font-size: 12px;
+    width: 120px;
+}
+
+.movie-filter-bar select {
+    height: 30px;
+    font-size: 12px;
+    padding: 2px 6px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    background-color: #D6D6D6;
+}
+
+.movie-filter-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}

@@ -1,0 +1,3133 @@
+.chi-tit-phim {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.chi-tit-phim .chi-tit-phim-model {
+  background-color: #ffffff;
+  overflow: hidden;
+  width: 1366px;
+  height: 768px;
+  position: relative;
+}
+
+.chi-tit-phim .overlap {
+  position: absolute;
+  width: 1366px;
+  height: 768px;
+  top: 0;
+  left: 0;
+  background-color: #ffffff;
+}
+
+.chi-tit-phim .navbar {
+  position: absolute;
+  width: 1366px;
+  height: 73px;
+  top: 0;
+  left: 0;
+}
+
+.chi-tit-phim .rectangle {
+  position: absolute;
+  width: 1366px;
+  height: 56px;
+  top: 0;
+  left: 0;
+  background-color: #d9d9d9;
+}
+
+.chi-tit-phim .text-wrapper {
+  position: absolute;
+  width: 78px;
+  top: 19px;
+  left: 135px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.chi-tit-phim .layer {
+  top: 13px;
+  position: absolute;
+  width: 24px;
+  height: 27px;
+  left: 1142px;
+}
+
+.chi-tit-phim .group {
+  position: absolute;
+  width: 24px;
+  height: 26px;
+  top: 13px;
+  left: 1096px;
+}
+
+.chi-tit-phim .div {
+  position: absolute;
+  width: 147px;
+  top: 19px;
+  left: 379px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.chi-tit-phim .text-wrapper-2 {
+  position: absolute;
+  width: 81px;
+  top: 19px;
+  left: 272px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.chi-tit-phim .TI-KHON {
+  position: absolute;
+  width: 70px;
+  height: 14px;
+  top: 19px;
+  left: 1207px;
+}
+
+.chi-tit-phim .text-wrapper-3 {
+  position: absolute;
+  width: 96px;
+  top: 19px;
+  left: 483px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.chi-tit-phim .image {
+  width: 50px;
+  height: 50px;
+  top: 3px;
+  left: 1298px;
+  position: absolute;
+  object-fit: cover;
+}
+
+.chi-tit-phim .LOGO {
+  position: absolute;
+  width: 34px;
+  height: 10px;
+  top: 23px;
+  left: 35px;
+}
+
+.chi-tit-phim .rectangle-2 {
+  position: absolute;
+  width: 1366px;
+  height: 70px;
+  top: 0;
+  left: 0;
+  background-color: #d9d9d9;
+}
+
+.chi-tit-phim .CABA-HO-NG-MAI {
+  position: absolute;
+  width: 127px;
+  top: 28px;
+  left: 587px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.chi-tit-phim .text-wrapper-4 {
+  position: absolute;
+  width: 78px;
+  top: 28px;
+  left: 135px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.chi-tit-phim .img {
+  top: 22px;
+  position: absolute;
+  width: 24px;
+  height: 27px;
+  left: 1142px;
+}
+
+.chi-tit-phim .text-wrapper-5 {
+  position: absolute;
+  width: 147px;
+  top: 28px;
+  left: 379px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.chi-tit-phim .text-wrapper-6 {
+  position: absolute;
+  width: 81px;
+  top: 28px;
+  left: 272px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.chi-tit-phim .MINH-CHIN {
+  position: absolute;
+  width: 78px;
+  height: 14px;
+  top: 29px;
+  left: 1208px;
+}
+
+.chi-tit-phim .text-wrapper-7 {
+  position: absolute;
+  width: 96px;
+  top: 28px;
+  left: 483px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.chi-tit-phim .group-2 {
+  position: absolute;
+  width: 253px;
+  height: 30px;
+  top: 23px;
+  left: 874px;
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+
+.chi-tit-phim .group-3 {
+  position: absolute;
+  width: 24px;
+  height: 26px;
+  top: 3px;
+  left: 3px;
+}
+
+.chi-tit-phim .line {
+  position: absolute;
+  width: 1px;
+  height: 28px;
+  top: 2px;
+  left: 33px;
+  object-fit: cover;
+}
+
+.chi-tit-phim .image-2 {
+  width: 73px;
+  height: 40px;
+  top: 15px;
+  left: 17px;
+  position: absolute;
+  object-fit: cover;
+}
+
+.chi-tit-phim .image-3 {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: 13px;
+  left: 1308px;
+  object-fit: cover;
+}
+
+.chi-tit-phim .overlap-group {
+  position: absolute;
+  width: 1217px;
+  height: 48px;
+  top: 542px;
+  left: 57px;
+}
+
+.chi-tit-phim .text-wrapper-8 {
+  position: absolute;
+  width: 56px;
+  top: 12px;
+  left: 0;
+  font-family: "Roboto", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 5px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.chi-tit-phim .text-wrapper-9 {
+  position: absolute;
+  width: 56px;
+  top: 12px;
+  left: 82px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 5px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.chi-tit-phim .div-wrapper {
+  position: absolute;
+  width: 17px;
+  height: 13px;
+  top: 0;
+  left: 486px;
+}
+
+.chi-tit-phim .text {
+  width: 15px;
+  top: 0;
+  left: 0;
+  font-family: "Alumni Sans", Helvetica;
+  font-weight: 400;
+  white-space: nowrap;
+  position: absolute;
+  color: #000000;
+  font-size: 18px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.chi-tit-phim .text-wrapper-10 {
+  position: absolute;
+  width: 120px;
+  top: 27px;
+  left: 22px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 700;
+  color: #000000;
+  font-size: 18px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.chi-tit-phim .rectangle-3 {
+  position: absolute;
+  width: 131px;
+  height: 7px;
+  top: 4px;
+  left: 4px;
+  background-color: #527de9;
+}
+
+.chi-tit-phim .group-4 {
+  position: absolute;
+  width: 1213px;
+  height: 3px;
+  top: 11px;
+  left: 4px;
+}
+
+.chi-tit-phim .group-wrapper {
+  position: absolute;
+  width: 92px;
+  height: 52px;
+  top: 484px;
+  left: 88px;
+}
+
+.chi-tit-phim .group-5 {
+  height: 52px;
+}
+
+.chi-tit-phim .group-6 {
+  width: 92px;
+  height: 52px;
+}
+
+.chi-tit-phim .overlap-group-wrapper {
+  width: 94px;
+  height: 52px;
+}
+
+.chi-tit-phim .overlap-group-2 {
+  position: relative;
+  width: 92px;
+  height: 52px;
+}
+
+.chi-tit-phim .text-wrapper-11 {
+  position: absolute;
+  width: 45px;
+  top: 5px;
+  left: 47px;
+  font-family: "Alumni Sans", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 32px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.chi-tit-phim .group-7 {
+  position: absolute;
+  width: 49px;
+  height: 50px;
+  top: 0;
+  left: 0;
+}
+
+.chi-tit-phim .text-wrapper-12 {
+  position: absolute;
+  width: 47px;
+  top: 0;
+  left: 0;
+  font-family: "Roboto", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 24px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.chi-tit-phim .text-wrapper-13 {
+  position: absolute;
+  width: 113px;
+  top: 412px;
+  left: 490px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 700;
+  color: #2356ff;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.chi-tit-phim .image-4 {
+  width: 25px;
+  height: 25px;
+  top: 87px;
+  left: 21px;
+  position: absolute;
+  object-fit: cover;
+}
+
+.chi-tit-phim .text-wrapper-14 {
+  position: absolute;
+  width: 146px;
+  top: 334px;
+  left: 488px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 700;
+  color: #2356ff;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.chi-tit-phim .text-wrapper-15 {
+  position: absolute;
+  width: 113px;
+  top: 386px;
+  left: 335px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 700;
+  color: #000000;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.chi-tit-phim .text-wrapper-16 {
+  position: absolute;
+  width: 128px;
+  top: 412px;
+  left: 335px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 700;
+  color: #000000;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.chi-tit-phim .text-wrapper-17 {
+  position: absolute;
+  width: 113px;
+  top: 360px;
+  left: 335px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 700;
+  color: #000000;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.chi-tit-phim .text-wrapper-18 {
+  position: absolute;
+  width: 113px;
+  top: 334px;
+  left: 335px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 700;
+  color: #000000;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.chi-tit-phim .text-wrapper-19 {
+  position: absolute;
+  width: 113px;
+  top: 308px;
+  left: 335px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 700;
+  color: #000000;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.chi-tit-phim .group-8 {
+  position: absolute;
+  width: 236px;
+  height: 354px;
+  top: 97px;
+  left: 61px;
+}
+
+.chi-tit-phim .p {
+  position: absolute;
+  width: 860px;
+  top: 96px;
+  left: 328px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 700;
+  color: #000000;
+  font-size: 24px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.chi-tit-phim .text-wrapper-20 {
+  position: absolute;
+  width: 945px;
+  top: 148px;
+  left: 329px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.chi-tit-phim .text-wrapper-21 {
+  position: absolute;
+  width: 113px;
+  top: 282px;
+  left: 335px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 700;
+  color: #000000;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.chi-tit-phim .text-wrapper-22 {
+  position: absolute;
+  width: 113px;
+  top: 282px;
+  left: 488px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 700;
+  color: #2356ff;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.chi-tit-phim .text-wrapper-23 {
+  position: absolute;
+  width: 530px;
+  top: 308px;
+  left: 488px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 700;
+  color: #2356ff;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.chi-tit-phim .text-wrapper-24 {
+  position: absolute;
+  width: 113px;
+  top: 360px;
+  left: 488px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 700;
+  color: #2356ff;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.chi-tit-phim .text-wrapper-25 {
+  position: absolute;
+  width: 113px;
+  top: 386px;
+  left: 488px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 700;
+  color: #2356ff;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.chi-tit-phim .overlap-wrapper {
+  position: absolute;
+  width: 117px;
+  height: 39px;
+  top: 609px;
+  left: 79px;
+}
+
+.chi-tit-phim .overlap-2 {
+  position: relative;
+  width: 115px;
+  height: 39px;
+  background-color: #d9d9d9;
+  border-radius: 8px;
+}
+
+.chi-tit-phim .text-wrapper-26 {
+  position: absolute;
+  width: 50px;
+  top: 9px;
+  left: 33px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 700;
+  color: #000000;
+  font-size: 18px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.chi-tit-phim .group-9 {
+  position: absolute;
+  width: 117px;
+  height: 39px;
+  top: 609px;
+  left: 238px;
+}
+
+.chi-tit-phim .group-10 {
+  position: absolute;
+  width: 117px;
+  height: 39px;
+  top: 609px;
+  left: 397px;
+}
+
+.chi-tit-phim .group-11 {
+  position: absolute;
+  width: 543px;
+  height: 52px;
+  top: 487px;
+  left: 251px;
+}
+
+.chi-tit-phim .group-12 {
+  position: absolute;
+  width: 94px;
+  height: 52px;
+  top: 0;
+  left: 0;
+}
+
+.chi-tit-phim .group-13 {
+  position: absolute;
+  width: 99px;
+  height: 52px;
+  top: 0;
+  left: 158px;
+}
+
+.chi-tit-phim .group-14 {
+  width: 101px;
+  height: 52px;
+}
+
+.chi-tit-phim .overlap-group-3 {
+  position: relative;
+  width: 99px;
+  height: 52px;
+}
+
+.chi-tit-phim .text-wrapper-27 {
+  position: absolute;
+  width: 45px;
+  top: 5px;
+  left: 54px;
+  font-family: "Alumni Sans", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 32px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.chi-tit-phim .element-mon-wrapper {
+  position: absolute;
+  width: 56px;
+  height: 50px;
+  top: 0;
+  left: 0;
+}
+
+.chi-tit-phim .element-mon {
+  position: absolute;
+  width: 54px;
+  top: 0;
+  left: 0;
+  font-family: "Roboto", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 24px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.chi-tit-phim .group-15 {
+  position: absolute;
+  width: 92px;
+  height: 52px;
+  top: 0;
+  left: 304px;
+}
+
+.chi-tit-phim .group-16 {
+  position: absolute;
+  width: 92px;
+  height: 52px;
+  top: 0;
+  left: 451px;
+}
+
+.chi-tit-phim .text-wrapper-28 {
+  position: absolute;
+  width: 120px;
+  top: 681px;
+  left: 77px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 700;
+  color: #000000;
+  font-size: 18px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.chi-tit-phim .overlap-3 {
+  position: absolute;
+  width: 115px;
+  height: 39px;
+  top: 719px;
+  left: 79px;
+  background-color: #d9d9d9;
+  border-radius: 8px;
+}
+
+.chi-tit-phim .text-wrapper-29 {
+  width: 50px;
+  top: 8px;
+  left: 33px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 700;
+  position: absolute;
+  color: #000000;
+  font-size: 18px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.chi-tit-phim .group-17 {
+  position: absolute;
+  width: 117px;
+  height: 39px;
+  top: 719px;
+  left: 238px;
+}
+
+.chi-tit-phim .group-18 {
+  position: absolute;
+  width: 117px;
+  height: 39px;
+  top: 719px;
+  left: 397px;
+}
+
+.chi-tit-phim .sort-newest {
+  position: absolute;
+  width: 41px;
+  top: -42px;
+  left: 0;
+  font-family: "Alumni Sans", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 9.8px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.chi-tit-phim .image-5 {
+  width: 8px;
+  height: 8px;
+  top: 12095px;
+  left: -13487px;
+  position: absolute;
+  object-fit: cover;
+}
+
+.chi-tit-phim .rectangle-4 {
+  position: absolute;
+  width: 253px;
+  height: 30px;
+  top: 12348px;
+  left: -12801px;
+}
+/* Existing CSS remains unchanged */
+
+/* Popup Styles */
+.chi-tit-phim .popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  z-index: 1001;
+  width: 400px;
+  max-height: 80vh;
+  overflow-y: auto;
+  display: none;
+  font-family: "Roboto", Helvetica;
+}
+
+.chi-tit-phim .popup.active {
+  display: block;
+}
+
+.chi-tit-phim .popup .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 20px;
+  height: 20px;
+  background: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+}
+
+.chi-tit-phim .popup .close-btn:hover {
+  background: #c82333;
+}
+
+.chi-tit-phim .popup h3 {
+  font-size: 20px;
+  color: #2356ff;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.chi-tit-phim .popup .booking-details {
+  margin-bottom: 20px;
+}
+
+.chi-tit-phim .popup .booking-details p {
+  font-size: 16px;
+  color: #000000;
+  margin: 10px 0;
+}
+
+.chi-tit-phim .popup .booking-details span {
+  font-weight: 700;
+  color: #2356ff;
+}
+
+.chi-tit-phim .popup .confirm-btn {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s;
+}
+
+.chi-tit-phim .popup .confirm-btn:hover {
+  background: #218838;
+}
+
+/* Overlay for background dimming */
+.chi-tit-phim .overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  display: none;
+}
+
+.chi-tit-phim .overlay.active {
+  display: block;
+}
+.t-v {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.t-v .t-v-model {
+  background-color: #ffffff;
+  overflow: hidden;
+  width: 1366px;
+  height: 768px;
+  position: relative;
+}
+
+.t-v .overlap {
+  position: absolute;
+  width: 1366px;
+  height: 768px;
+  top: 0;
+  left: 0;
+  background-color: #ffffff;
+}
+
+.t-v .navbar {
+  position: absolute;
+  width: 1366px;
+  height: 73px;
+  top: 0;
+  left: 0;
+}
+
+.t-v .rectangle {
+  position: absolute;
+  width: 1366px;
+  height: 56px;
+  top: 0;
+  left: 0;
+  background-color: #d9d9d9;
+}
+
+.t-v .text-wrapper {
+  position: absolute;
+  width: 78px;
+  top: 19px;
+  left: 135px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.t-v .layer {
+  top: 13px;
+  position: absolute;
+  width: 24px;
+  height: 27px;
+  left: 1142px;
+}
+
+.t-v .group {
+  position: absolute;
+  width: 24px;
+  height: 26px;
+  top: 13px;
+  left: 1096px;
+}
+
+.t-v .div {
+  position: absolute;
+  width: 147px;
+  top: 19px;
+  left: 379px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.t-v .text-wrapper-2 {
+  position: absolute;
+  width: 81px;
+  top: 19px;
+  left: 272px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.t-v .TI-KHON {
+  position: absolute;
+  width: 70px;
+  height: 14px;
+  top: 19px;
+  left: 1207px;
+}
+
+.t-v .text-wrapper-3 {
+  position: absolute;
+  width: 96px;
+  top: 19px;
+  left: 483px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.t-v .image {
+  width: 50px;
+  height: 50px;
+  top: 3px;
+  left: 1298px;
+  position: absolute;
+  object-fit: cover;
+}
+
+.t-v .LOGO {
+  position: absolute;
+  width: 34px;
+  height: 10px;
+  top: 23px;
+  left: 35px;
+}
+
+.t-v .rectangle-2 {
+  position: absolute;
+  width: 1366px;
+  height: 70px;
+  top: 0;
+  left: 0;
+  background-color: #d9d9d9;
+}
+
+.t-v .CABA-HO-NG-MAI {
+  position: absolute;
+  width: 135px;
+  top: 28px;
+  left: 587px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.t-v .text-wrapper-4 {
+  position: absolute;
+  width: 78px;
+  top: 28px;
+  left: 135px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.t-v .img {
+  top: 22px;
+  position: absolute;
+  width: 24px;
+  height: 27px;
+  left: 1142px;
+}
+
+.t-v .text-wrapper-5 {
+  position: absolute;
+  width: 147px;
+  top: 28px;
+  left: 379px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.t-v .text-wrapper-6 {
+  position: absolute;
+  width: 81px;
+  top: 28px;
+  left: 272px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.t-v .MINH-CHIN {
+  position: absolute;
+  width: 78px;
+  height: 14px;
+  top: 29px;
+  left: 1208px;
+}
+
+.t-v .text-wrapper-7 {
+  position: absolute;
+  width: 96px;
+  top: 28px;
+  left: 483px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.t-v .group-2 {
+  position: absolute;
+  width: 253px;
+  height: 30px;
+  top: 23px;
+  left: 874px;
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+
+.t-v .group-3 {
+  position: absolute;
+  width: 24px;
+  height: 26px;
+  top: 3px;
+  left: 3px;
+}
+
+.t-v .line {
+  width: 1px;
+  height: 28px;
+  top: 2px;
+  left: 33px;
+  position: absolute;
+  object-fit: cover;
+}
+
+.t-v .image-2 {
+  width: 73px;
+  height: 40px;
+  top: 15px;
+  left: 17px;
+  position: absolute;
+  object-fit: cover;
+}
+
+.t-v .image-3 {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: 13px;
+  left: 1308px;
+  object-fit: cover;
+}
+
+.t-v .overlap-group {
+  position: absolute;
+  width: 1217px;
+  height: 585px;
+  top: 96px;
+  left: 57px;
+}
+
+.t-v .overlap-2 {
+  position: absolute;
+  width: 1217px;
+  height: 585px;
+  top: 0;
+  left: 0;
+}
+
+.t-v .text-wrapper-8 {
+  position: absolute;
+  width: 56px;
+  top: 458px;
+  left: 0;
+  font-family: "Roboto", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 5px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.t-v .text-wrapper-9 {
+  position: absolute;
+  width: 56px;
+  top: 458px;
+  left: 82px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 5px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.t-v .div-wrapper {
+  position: absolute;
+  width: 17px;
+  height: 13px;
+  top: 446px;
+  left: 486px;
+}
+
+.t-v .text {
+  width: 15px;
+  top: 0;
+  left: 0;
+  font-family: "Alumni Sans", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 18px;
+  white-space: nowrap;
+  position: absolute;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.t-v .text-wrapper-10 {
+  position: absolute;
+  width: 113px;
+  top: 316px;
+  left: 433px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 700;
+  color: #2356ff;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.t-v .text-wrapper-11 {
+  position: absolute;
+  width: 146px;
+  top: 238px;
+  left: 431px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 700;
+  color: #2356ff;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.t-v .text-wrapper-12 {
+  position: absolute;
+  width: 113px;
+  top: 290px;
+  left: 278px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 700;
+  color: #000000;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.t-v .text-wrapper-13 {
+  position: absolute;
+  width: 128px;
+  top: 316px;
+  left: 278px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 700;
+  color: #000000;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.t-v .text-wrapper-14 {
+  position: absolute;
+  width: 113px;
+  top: 264px;
+  left: 278px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 700;
+  color: #000000;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.t-v .text-wrapper-15 {
+  position: absolute;
+  width: 113px;
+  top: 238px;
+  left: 278px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 700;
+  color: #000000;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.t-v .text-wrapper-16 {
+  position: absolute;
+  width: 113px;
+  top: 212px;
+  left: 278px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 700;
+  color: #000000;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.t-v .group-4 {
+  position: absolute;
+  width: 236px;
+  height: 354px;
+  top: 1px;
+  left: 4px;
+  background-image: url(https://c.animaapp.com/TGz2TmHN/img/image@2x.png);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.t-v .p {
+  position: absolute;
+  width: 860px;
+  top: 0;
+  left: 271px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 700;
+  color: #000000;
+  font-size: 24px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.t-v .text-wrapper-17 {
+  position: absolute;
+  width: 945px;
+  top: 52px;
+  left: 272px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.t-v .text-wrapper-18 {
+  position: absolute;
+  width: 113px;
+  top: 186px;
+  left: 278px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 700;
+  color: #000000;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.t-v .text-wrapper-19 {
+  position: absolute;
+  width: 113px;
+  top: 186px;
+  left: 431px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 700;
+  color: #2356ff;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.t-v .text-wrapper-20 {
+  position: absolute;
+  width: 530px;
+  top: 212px;
+  left: 431px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 700;
+  color: #2356ff;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.t-v .text-wrapper-21 {
+  position: absolute;
+  width: 113px;
+  top: 264px;
+  left: 431px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 700;
+  color: #2356ff;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.t-v .text-wrapper-22 {
+  position: absolute;
+  width: 113px;
+  top: 290px;
+  left: 431px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 700;
+  color: #2356ff;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.t-v .text-wrapper-23 {
+  position: absolute;
+  width: 120px;
+  top: 473px;
+  left: 22px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 700;
+  color: #000000;
+  font-size: 18px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.t-v .overlap-wrapper {
+  position: absolute;
+  width: 117px;
+  height: 39px;
+  top: 513px;
+  left: 181px;
+}
+
+.t-v .overlap-3 {
+  position: relative;
+  width: 115px;
+  height: 39px;
+  background-color: #d9d9d9;
+  border-radius: 8px;
+}
+
+.t-v .text-wrapper-24 {
+  position: absolute;
+  width: 50px;
+  top: 9px;
+  left: 33px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 700;
+  color: #000000;
+  font-size: 18px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.t-v .overlap-group-wrapper {
+  position: absolute;
+  width: 117px;
+  height: 39px;
+  top: 513px;
+  left: 340px;
+}
+
+.t-v .rectangle-3 {
+  position: absolute;
+  width: 131px;
+  height: 7px;
+  top: 450px;
+  left: 4px;
+  background-color: #527de9;
+}
+
+.t-v .group-5 {
+  position: absolute;
+  width: 543px;
+  height: 52px;
+  top: 391px;
+  left: 194px;
+}
+
+.t-v .group-6 {
+  position: absolute;
+  width: 94px;
+  height: 52px;
+  top: 0;
+  left: 0;
+}
+
+.t-v .overlap-group-2 {
+  position: relative;
+  width: 92px;
+  height: 52px;
+}
+
+.t-v .text-wrapper-25 {
+  position: absolute;
+  width: 45px;
+  top: 5px;
+  left: 47px;
+  font-family: "Alumni Sans", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 32px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.t-v .group-7 {
+  position: absolute;
+  width: 49px;
+  height: 50px;
+  top: 0;
+  left: 0;
+}
+
+.t-v .text-wrapper-26 {
+  position: absolute;
+  width: 47px;
+  top: 0;
+  left: 0;
+  font-family: "Roboto", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 24px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.t-v .group-wrapper {
+  position: absolute;
+  width: 99px;
+  height: 52px;
+  top: 0;
+  left: 158px;
+}
+
+.t-v .group-8 {
+  width: 101px;
+  height: 52px;
+}
+
+.t-v .overlap-group-3 {
+  position: relative;
+  width: 99px;
+  height: 52px;
+}
+
+.t-v .text-wrapper-27 {
+  position: absolute;
+  width: 45px;
+  top: 5px;
+  left: 54px;
+  font-family: "Alumni Sans", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 32px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.t-v .element-mon-wrapper {
+  position: absolute;
+  width: 56px;
+  height: 50px;
+  top: 0;
+  left: 0;
+}
+
+.t-v .element-mon {
+  position: absolute;
+  width: 54px;
+  top: 0;
+  left: 0;
+  font-family: "Roboto", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 24px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.t-v .group-9 {
+  position: absolute;
+  width: 92px;
+  height: 52px;
+  top: 0;
+  left: 304px;
+}
+
+.t-v .group-10 {
+  width: 94px;
+  height: 52px;
+}
+
+.t-v .group-11 {
+  position: absolute;
+  width: 92px;
+  height: 52px;
+  top: 0;
+  left: 451px;
+}
+
+.t-v .group-12 {
+  position: absolute;
+  width: 1213px;
+  height: 3px;
+  top: 457px;
+  left: 4px;
+}
+
+.t-v .group-13 {
+  position: absolute;
+  width: 989px;
+  height: 573px;
+  top: 12px;
+  left: 157px;
+}
+
+.t-v .overlap-4 {
+  position: relative;
+  width: 969px;
+  height: 573px;
+  background-color: #d9d9d9;
+  border-radius: 10px;
+}
+
+.t-v .overlap-5 {
+  position: absolute;
+  width: 641px;
+  height: 56px;
+  top: 8px;
+  left: 35px;
+}
+
+.t-v .text-wrapper-28 {
+  position: absolute;
+  width: 103px;
+  top: 20px;
+  left: 286px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.t-v .vector {
+  position: absolute;
+  width: 641px;
+  height: 31px;
+  top: 0;
+  left: 0;
+}
+
+.t-v .overlap-6 {
+  position: absolute;
+  width: 235px;
+  height: 354px;
+  top: 55px;
+  left: 709px;
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+
+.t-v .text-wrapper-29 {
+  position: absolute;
+  width: 203px;
+  top: 309px;
+  left: 11px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.t-v .ph-ng-chi-u {
+  position: absolute;
+  width: 203px;
+  top: 287px;
+  left: 11px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.t-v .th-i-gian {
+  position: absolute;
+  width: 203px;
+  top: 266px;
+  left: 11px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.t-v .ng-y {
+  position: absolute;
+  width: 203px;
+  top: 244px;
+  left: 11px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.t-v .r-p-CABA-ho-ng-mai {
+  position: absolute;
+  width: 203px;
+  top: 222px;
+  left: 11px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.t-v .th-i-l-ng {
+  position: absolute;
+  width: 203px;
+  top: 194px;
+  left: 10px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.t-v .text-wrapper-30 {
+  position: absolute;
+  width: 46px;
+  top: 103px;
+  left: 122px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.t-v .text-wrapper-31 {
+  position: absolute;
+  width: 78px;
+  top: 3px;
+  left: 120px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 700;
+  color: #2356ff;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.t-v .line-2 {
+  width: 235px;
+  height: 2px;
+  top: 214px;
+  left: 0;
+  position: absolute;
+  object-fit: cover;
+}
+
+.t-v .group-14 {
+  position: absolute;
+  width: 64px;
+  height: 19px;
+  top: 327px;
+  left: 159px;
+}
+
+.t-v .confirm-wrapper {
+  position: relative;
+  width: 62px;
+  height: 19px;
+  background-color: #e901019e;
+  border-radius: 10px;
+}
+
+.t-v .confirm {
+  position: absolute;
+  width: 46px;
+  top: 6px;
+  left: 14px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 8px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.t-v .th-lo-i-ho-t-h-nh {
+  position: absolute;
+  width: 221px;
+  top: 175px;
+  left: 10px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.t-v .group-15 {
+  position: absolute;
+  width: 112px;
+  height: 168px;
+  top: 0;
+  left: 0;
+  background-image: url(https://c.animaapp.com/TGz2TmHN/img/image-3@2x.png);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.t-v .group-16 {
+  position: absolute;
+  width: 514px;
+  height: 345px;
+  top: 104px;
+  left: 100px;
+}
+
+.t-v .overlap-7 {
+  position: relative;
+  height: 345px;
+}
+
+.t-v .rectangle-4 {
+  position: absolute;
+  width: 365px;
+  height: 259px;
+  top: 0;
+  left: 73px;
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+
+.t-v .group-17 {
+  position: absolute;
+  width: 514px;
+  height: 328px;
+  top: 17px;
+  left: 0;
+}
+
+.t-v .overlap-8 {
+  position: relative;
+  height: 328px;
+}
+
+.t-v .group-18 {
+  position: absolute;
+  width: 514px;
+  height: 328px;
+  top: 0;
+  left: 0;
+}
+
+.t-v .group-19 {
+  position: absolute;
+  width: 463px;
+  height: 229px;
+  top: 0;
+  left: 95px;
+}
+
+.t-v .overlap-9 {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 0;
+  left: 297px;
+  background-image: url(https://c.animaapp.com/TGz2TmHN/img/image-84@2x.png);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.t-v .text-wrapper-32 {
+  position: absolute;
+  top: 2px;
+  left: 5px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 500;
+  color: #000000;
+  font-size: 9px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.t-v .overlap-10 {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 0;
+  left: 198px;
+  background-image: url(https://c.animaapp.com/TGz2TmHN/img/image-84@2x.png);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.t-v .text-wrapper-33 {
+  position: absolute;
+  top: 2px;
+  left: 7px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 500;
+  color: #000000;
+  font-size: 9px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.t-v .overlap-11 {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 0;
+  left: 231px;
+  background-image: url(https://c.animaapp.com/TGz2TmHN/img/image-84@2x.png);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.t-v .overlap-12 {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 0;
+  left: 264px;
+  background-image: url(https://c.animaapp.com/TGz2TmHN/img/image-84@2x.png);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.t-v .overlap-13 {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 0;
+  left: 165px;
+  background-image: url(https://c.animaapp.com/TGz2TmHN/img/image-84@2x.png);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.t-v .overlap-14 {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 34px;
+  left: 298px;
+  background-image: url(https://c.animaapp.com/TGz2TmHN/img/image-84@2x.png);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.t-v .text-wrapper-34 {
+  position: absolute;
+  top: 2px;
+  left: 4px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 500;
+  color: #000000;
+  font-size: 9px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.t-v .overlap-15 {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 34px;
+  left: 199px;
+  background-image: url(https://c.animaapp.com/TGz2TmHN/img/image-84@2x.png);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.t-v .overlap-16 {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 34px;
+  left: 232px;
+  background-image: url(https://c.animaapp.com/TGz2TmHN/img/image-84@2x.png);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.t-v .overlap-17 {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 34px;
+  left: 265px;
+  background-image: url(https://c.animaapp.com/TGz2TmHN/img/image-84@2x.png);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.t-v .overlap-18 {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 34px;
+  left: 166px;
+  background-image: url(https://c.animaapp.com/TGz2TmHN/img/image-84@2x.png);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.t-v .overlap-19 {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 68px;
+  left: 297px;
+  background-image: url(https://c.animaapp.com/TGz2TmHN/img/image-84@2x.png);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.t-v .overlap-20 {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 68px;
+  left: 198px;
+  background-image: url(https://c.animaapp.com/TGz2TmHN/img/image-84@2x.png);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.t-v .overlap-21 {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 68px;
+  left: 231px;
+  background-image: url(https://c.animaapp.com/TGz2TmHN/img/image-84@2x.png);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.t-v .overlap-22 {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 68px;
+  left: 264px;
+  background-image: url(https://c.animaapp.com/TGz2TmHN/img/image-84@2x.png);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.t-v .overlap-group-4 {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 68px;
+  left: 165px;
+  background-image: url(https://c.animaapp.com/TGz2TmHN/img/image-84@2x.png);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.t-v .overlap-23 {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 102px;
+  left: 298px;
+  background-image: url(https://c.animaapp.com/TGz2TmHN/img/image-84@2x.png);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.t-v .overlap-24 {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 102px;
+  left: 199px;
+  background-image: url(https://c.animaapp.com/TGz2TmHN/img/image-84@2x.png);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.t-v .overlap-25 {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 102px;
+  left: 232px;
+  background-image: url(https://c.animaapp.com/TGz2TmHN/img/image-84@2x.png);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.t-v .overlap-26 {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 102px;
+  left: 265px;
+  background-image: url(https://c.animaapp.com/TGz2TmHN/img/image-84@2x.png);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.t-v .text-wrapper-35 {
+  position: absolute;
+  top: 104px;
+  left: 173px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 500;
+  color: #000000;
+  font-size: 9px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.t-v .overlap-27 {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 136px;
+  left: 297px;
+  background-image: url(https://c.animaapp.com/TGz2TmHN/img/image-84@2x.png);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.t-v .text-wrapper-36 {
+  position: absolute;
+  top: 138px;
+  left: 205px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 500;
+  color: #000000;
+  font-size: 9px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.t-v .text-wrapper-37 {
+  position: absolute;
+  top: 138px;
+  left: 238px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 500;
+  color: #000000;
+  font-size: 9px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.t-v .text-wrapper-38 {
+  position: absolute;
+  top: 138px;
+  left: 271px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 500;
+  color: #000000;
+  font-size: 9px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.t-v .text-wrapper-39 {
+  position: absolute;
+  top: 138px;
+  left: 172px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 500;
+  color: #000000;
+  font-size: 9px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.t-v .overlap-28 {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 170px;
+  left: 297px;
+  background-image: url(https://c.animaapp.com/TGz2TmHN/img/image-84@2x.png);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.t-v .overlap-29 {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 170px;
+  left: 198px;
+  background-image: url(https://c.animaapp.com/TGz2TmHN/img/image-84@2x.png);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.t-v .overlap-30 {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 170px;
+  left: 231px;
+  background-image: url(https://c.animaapp.com/TGz2TmHN/img/image-84@2x.png);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.t-v .overlap-31 {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 170px;
+  left: 264px;
+  background-image: url(https://c.animaapp.com/TGz2TmHN/img/image-84@2x.png);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.t-v .text-wrapper-40 {
+  position: absolute;
+  top: 172px;
+  left: 172px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 500;
+  color: #000000;
+  font-size: 9px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.t-v .overlap-32 {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 204px;
+  left: 297px;
+  background-image: url(https://c.animaapp.com/TGz2TmHN/img/image-84@2x.png);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.t-v .overlap-33 {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 204px;
+  left: 198px;
+  background-image: url(https://c.animaapp.com/TGz2TmHN/img/image-84@2x.png);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.t-v .overlap-34 {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 204px;
+  left: 231px;
+  background-image: url(https://c.animaapp.com/TGz2TmHN/img/image-84@2x.png);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.t-v .overlap-35 {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 204px;
+  left: 264px;
+  background-image: url(https://c.animaapp.com/TGz2TmHN/img/image-84@2x.png);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.t-v .overlap-36 {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 204px;
+  left: 165px;
+  background-image: url(https://c.animaapp.com/TGz2TmHN/img/image-84@2x.png);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.t-v .overlap-37 {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 34px;
+  left: 132px;
+  background-image: url(https://c.animaapp.com/TGz2TmHN/img/image-84@2x.png);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.t-v .b-wrapper {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 34px;
+  left: 33px;
+  background-image: url(https://c.animaapp.com/TGz2TmHN/img/image-84@2x.png);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.t-v .overlap-38 {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 34px;
+  left: 66px;
+  background-image: url(https://c.animaapp.com/TGz2TmHN/img/image-84@2x.png);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.t-v .overlap-39 {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 34px;
+  left: 99px;
+  background-image: url(https://c.animaapp.com/TGz2TmHN/img/image-84@2x.png);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.t-v .overlap-40 {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 34px;
+  left: 0;
+  background-image: url(https://c.animaapp.com/TGz2TmHN/img/image-84@2x.png);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.t-v .overlap-41 {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 68px;
+  left: 132px;
+  background-image: url(https://c.animaapp.com/TGz2TmHN/img/image-84@2x.png);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.t-v .overlap-42 {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 68px;
+  left: 33px;
+  background-image: url(https://c.animaapp.com/TGz2TmHN/img/image-84@2x.png);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.t-v .overlap-43 {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 68px;
+  left: 66px;
+  background-image: url(https://c.animaapp.com/TGz2TmHN/img/image-84@2x.png);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.t-v .overlap-44 {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 68px;
+  left: 99px;
+  background-image: url(https://c.animaapp.com/TGz2TmHN/img/image-84@2x.png);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.t-v .overlap-45 {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 68px;
+  left: 0;
+  background-image: url(https://c.animaapp.com/TGz2TmHN/img/image-84@2x.png);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.t-v .text-wrapper-41 {
+  position: absolute;
+  top: 104px;
+  left: 139px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 500;
+  color: #000000;
+  font-size: 9px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.t-v .overlap-46 {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 102px;
+  left: 33px;
+  background-image: url(https://c.animaapp.com/TGz2TmHN/img/image-84@2x.png);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.t-v .overlap-47 {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 102px;
+  left: 66px;
+  background-image: url(https://c.animaapp.com/TGz2TmHN/img/image-84@2x.png);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.t-v .overlap-48 {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 102px;
+  left: 99px;
+  background-image: url(https://c.animaapp.com/TGz2TmHN/img/image-84@2x.png);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.t-v .overlap-49 {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 102px;
+  left: 0;
+  background-image: url(https://c.animaapp.com/TGz2TmHN/img/image-84@2x.png);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.t-v .overlap-50 {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 136px;
+  left: 132px;
+  background-image: url(https://c.animaapp.com/TGz2TmHN/img/image-84@2x.png);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.t-v .overlap-51 {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 136px;
+  left: 33px;
+  background-image: url(https://c.animaapp.com/TGz2TmHN/img/image-84@2x.png);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.t-v .overlap-52 {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 136px;
+  left: 66px;
+  background-image: url(https://c.animaapp.com/TGz2TmHN/img/image-84@2x.png);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.t-v .overlap-53 {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 136px;
+  left: 99px;
+  background-image: url(https://c.animaapp.com/TGz2TmHN/img/image-84@2x.png);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.t-v .overlap-54 {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 136px;
+  left: 0;
+  background-image: url(https://c.animaapp.com/TGz2TmHN/img/image-84@2x.png);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.t-v .text-wrapper-42 {
+  position: absolute;
+  top: 172px;
+  left: 139px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 500;
+  color: #000000;
+  font-size: 9px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.t-v .overlap-55 {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 170px;
+  left: 33px;
+  background-image: url(https://c.animaapp.com/TGz2TmHN/img/image-84@2x.png);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.t-v .overlap-56 {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 170px;
+  left: 66px;
+  background-image: url(https://c.animaapp.com/TGz2TmHN/img/image-84@2x.png);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.t-v .overlap-57 {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 170px;
+  left: 99px;
+  background-image: url(https://c.animaapp.com/TGz2TmHN/img/image-84@2x.png);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.t-v .overlap-58 {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 170px;
+  left: 0;
+  background-image: url(https://c.animaapp.com/TGz2TmHN/img/image-84@2x.png);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.t-v .overlap-59 {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 0;
+  left: 132px;
+  background-image: url(https://c.animaapp.com/TGz2TmHN/img/image-84@2x.png);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.t-v .overlap-60 {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 0;
+  left: 33px;
+  background-image: url(https://c.animaapp.com/TGz2TmHN/img/image-84@2x.png);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.t-v .overlap-61 {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 0;
+  left: 66px;
+  background-image: url(https://c.animaapp.com/TGz2TmHN/img/image-84@2x.png);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.t-v .overlap-62 {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 0;
+  left: 99px;
+  background-image: url(https://c.animaapp.com/TGz2TmHN/img/image-84@2x.png);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.t-v .overlap-63 {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 0;
+  left: 0;
+  background-image: url(https://c.animaapp.com/TGz2TmHN/img/image-84@2x.png);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.t-v .overlap-64 {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 204px;
+  left: 132px;
+  background-image: url(https://c.animaapp.com/TGz2TmHN/img/image-84@2x.png);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.t-v .overlap-65 {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 204px;
+  left: 33px;
+  background-image: url(https://c.animaapp.com/TGz2TmHN/img/image-84@2x.png);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.t-v .overlap-66 {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 204px;
+  left: 66px;
+  background-image: url(https://c.animaapp.com/TGz2TmHN/img/image-84@2x.png);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.t-v .overlap-67 {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 204px;
+  left: 99px;
+  background-image: url(https://c.animaapp.com/TGz2TmHN/img/image-84@2x.png);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.t-v .overlap-68 {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 204px;
+  left: 0;
+  background-image: url(https://c.animaapp.com/TGz2TmHN/img/image-84@2x.png);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.t-v .group-20 {
+  position: absolute;
+  width: 514px;
+  height: 55px;
+  top: 273px;
+  left: 0;
+}
+
+.t-v .overlap-69 {
+  position: relative;
+  width: 522px;
+  height: 55px;
+}
+
+.t-v .rectangle-5 {
+  position: absolute;
+  width: 506px;
+  height: 55px;
+  top: 0;
+  left: 0;
+  background-color: #fffefe;
+  border-radius: 10px;
+}
+
+.t-v .group-21 {
+  position: absolute;
+  width: 508px;
+  height: 25px;
+  top: 13px;
+  left: 14px;
+}
+
+.t-v .text-wrapper-43 {
+  width: 90px;
+  left: 410px;
+  position: absolute;
+  top: 7px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 10px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.t-v .text-wrapper-44 {
+  position: absolute;
+  width: 90px;
+  top: 7px;
+  left: 265px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 10px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.t-v .text-wrapper-45 {
+  position: absolute;
+  width: 73px;
+  top: 7px;
+  left: 132px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 10px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.t-v .text-wrapper-46 {
+  width: 61px;
+  left: 29px;
+  position: absolute;
+  top: 7px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 10px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.t-v .image-4 {
+  width: 25px;
+  height: 25px;
+  top: 0;
+  left: 0;
+  position: absolute;
+  object-fit: cover;
+}
+
+.t-v .chair {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 0;
+  left: 102px;
+  object-fit: cover;
+}
+
+.t-v .chair-2 {
+  top: 0;
+  left: 384px;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  object-fit: cover;
+}
+
+.t-v .chair-3 {
+  top: 102px;
+  left: 227px;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  object-fit: cover;
+}
+
+.t-v .chair-4 {
+  top: 102px;
+  left: 260px;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  object-fit: cover;
+}
+
+.t-v .chair-5 {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 170px;
+  left: 227px;
+  object-fit: cover;
+}
+
+.t-v .chair-6 {
+  top: 170px;
+  left: 259px;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  object-fit: cover;
+}
+
+.t-v .chair-7 {
+  top: 286px;
+  left: 251px;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  object-fit: cover;
+}
+
+.t-v .image-5 {
+  width: 25px;
+  height: 25px;
+  top: 153px;
+  left: 260px;
+  position: absolute;
+  object-fit: cover;
+}
+
+.t-v .image-6 {
+  width: 25px;
+  height: 25px;
+  top: 153px;
+  left: 293px;
+  position: absolute;
+  object-fit: cover;
+}
+
+.t-v .image-7 {
+  width: 25px;
+  height: 25px;
+  top: 153px;
+  left: 327px;
+  position: absolute;
+  object-fit: cover;
+}
+
+.t-v .image-8 {
+  width: 25px;
+  height: 25px;
+  top: 153px;
+  left: 359px;
+  position: absolute;
+  object-fit: cover;
+}
+
+.t-v .arrow {
+  position: absolute;
+  width: 60px;
+  height: 15px;
+  top: 70px;
+  left: 546px;
+}
+
+.t-v .group-22 {
+  position: absolute;
+  width: 72px;
+  height: 29px;
+  top: 462px;
+  left: 650px;
+}
+
+.t-v .text-wrapper-47 {
+  width: 70px;
+  top: 0;
+  left: 0;
+  font-family: "Roboto", Helvetica;
+  font-weight: 700;
+  color: #ff0000;
+  font-size: 25px;
+  position: absolute;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.t-v .group-23 {
+  position: absolute;
+  width: 92px;
+  height: 52px;
+  top: 388px;
+  left: 31px;
+}
+
+.t-v .group-24 {
+  height: 52px;
+}
+
+.t-v .group-25 {
+  width: 92px;
+  height: 52px;
+}
+
+.t-v .group-26 {
+  position: absolute;
+  width: 117px;
+  height: 39px;
+  top: 513px;
+  left: 22px;
+}
+
+.t-v .image-9 {
+  width: 25px;
+  height: 25px;
+  top: 87px;
+  left: 21px;
+  position: absolute;
+  object-fit: cover;
+}
+
+.t-v .text-wrapper-48 {
+  position: absolute;
+  width: 120px;
+  top: 681px;
+  left: 77px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 700;
+  color: #000000;
+  font-size: 18px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.t-v .overlap-70 {
+  position: absolute;
+  width: 115px;
+  height: 39px;
+  top: 719px;
+  left: 79px;
+  background-color: #d9d9d9;
+  border-radius: 8px;
+}
+
+.t-v .text-wrapper-49 {
+  width: 50px;
+  top: 8px;
+  left: 33px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 700;
+  color: #000000;
+  font-size: 18px;
+  position: absolute;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.t-v .group-27 {
+  position: absolute;
+  width: 117px;
+  height: 39px;
+  top: 719px;
+  left: 238px;
+}
+
+.t-v .group-28 {
+  position: absolute;
+  width: 117px;
+  height: 39px;
+  top: 719px;
+  left: 397px;
+}
+
+.t-v .sort-newest {
+  position: absolute;
+  width: 41px;
+  top: -42px;
+  left: 0;
+  font-family: "Alumni Sans", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 9.8px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.t-v .image-10 {
+  width: 8px;
+  height: 8px;
+  top: 11001px;
+  left: -13467px;
+  position: absolute;
+  object-fit: cover;
+}
+
+.t-v .rectangle-6 {
+  position: absolute;
+  width: 253px;
+  height: 30px;
+  top: 11254px;
+  left: -12781px;
+}
+.t-v { display: none; }
+      .highlight { background-color: #ffd700 !important; font-weight: bold !important; padding: 5px; }
+      .showtime { cursor: pointer; }
+      .back-button { cursor: pointer; padding: 10px; background-color: #007bff; color: white; border-radius: 5px; display: inline-block; margin: 10px; }
+      .seat { cursor: pointer; padding: 5px; transition: background-color 0.3s; }
+      .seat.selected { background-color: #00FF00 !important; }
+      .confirm-overlay {
+        position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: rgba(0, 0, 0, 0.3);
+        display: none; justify-content: center; align-items: center; z-index: 999;
+      }
+      .confirm-content { width: 450px; height: 150px; background: #EFE7E7; border-radius: 10px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25); padding: 0; position: relative; display: flex; flex-direction: column; }
+      .confirm-header { color: #000; font-family: Roboto; font-size: 14px; font-style: normal; font-weight: 700; line-height: normal; padding: 7px 9px 8px; }
+      .custom-line { height: 1px; background-color: #95848459; border: none; margin-bottom: 7px; }
+      .close-popup { position: absolute; top: 10px; right: 12px; background: none; border: none; cursor: pointer; }
+      .confirm-body { display: flex; align-items: center; gap: 10px; padding: 10px 30px; color: #000; font-size: 14px; font-style: normal; font-weight: medium; line-height: normal; }
+      .ok-body { display: flex; align-items: center; gap: 35px; padding: 10px 45px; color: #000; font-size: 14px; font-style: normal; font-weight: 500; line-height: normal; }
+      .confirm-buttons { display: flex; justify-content: flex-end; gap: 10px; padding: 2px 40px 16px; }
+      .ok-buttons { display: flex; justify-content: center; gap: 10px; padding: 2px 40px 16px; }
+      .btn-confirm { background: #1EB3EE; color: black; border: 0.5px solid #5193D5; padding: 2px 10px; border-radius: 10px; font-size: 14px; font-style: normal; font-weight: 500; line-height: normal; cursor: pointer; width: 84px; height: 25px; }
+      .btn-cancel { background: #B3AAAA; color: black; border: none; padding: 2px 10px; border-radius: 10px; font-size: 14px; font-style: normal; font-weight: 500; line-height: normal; cursor: pointer; width: 84px; height: 25px; }
+      .btn-ok { background: #B3AAAA; color: black; border: none; padding: 2px 10px; border-radius: 10px; font-size: 14px; font-style: normal; font-weight: 500; line-height: normal; cursor: pointer; width: 84px; height: 25px; }

@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CABA Cinema</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    <link rel="stylesheet" href="../css/movie.css">
+    <style>
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: calc(100vh - 65px);
+            /* trừ header nếu có */
+            background: transparent;
+        }
+
+        .center-rectangle {
+            width: 1107px;
+            height: 573px;
+            background-color: #FFD7C4;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 10px;
+            padding: 20px 40px;
+            box-sizing: border-box;
+            overflow-y: auto;
+        }
+
+        .center-rectangle h3 {
+            font-size: 22px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .filter-tabs {
+            display: flex;
+            gap: 80px;
+            margin: 20px 95px 20px;
+            font-weight: bold;
+
+        }
+
+        .filter-tabs span {
+            color: gray;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .filter-tabs .active {
+            color: black;
+            /* border-bottom: 2px solid black; */
+        }
+
+        .ticket-row {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: space-between;
+            padding: 20px 20px 20px 95px;
+            gap: 0;
+            /* khoảng cách giữa các cột */
+        }
+
+        .ticket-poster {
+            flex: 0 0 88px;
+            /* cố định chiều rộng ảnh */
+        }
+
+        .ticket-poster img {
+            width: 64px;
+            height: 88px;
+            flex-shrink: 0;
+            border-radius: 10px;
+        }
+
+        .ticket-info {
+            flex: 1;
+            font-size: 14px;
+        }
+
+        .ticket-info {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            font-size: 14px;
+        }
+
+        .info-row {
+            display: flex;
+            gap: 10px;
+        }
+
+        .label {
+            min-width: 90px;
+            font-weight: bold;
+        }
+
+        .value {
+            flex: 1;
+            font-weight: bold;
+        }
+
+
+        .ticket-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: flex-end;
+            flex: 0 0 100px;
+            /* cố định chiều rộng cột nút */
+            margin-right: 95px;
+        }
+
+        .btn-detail,
+        .btn-cancel {
+            width: 80px;
+            height: 30px;
+            color: #FFF;
+            font-family: Roboto;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: bold;
+            line-height: normal;
+            border: none;
+            border-radius: 10px;
+            color: white;
+            cursor: pointer;
+
+        }
+
+        .btn-detail {
+
+            background: #2357FF;
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        }
+
+        .btn-cancel {
+
+            background: rgba(233, 1, 1, 0.62);
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        }
+
+        .confirm-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.3);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+        }
+
+        .confirm-content {
+            width: 450px;
+            height: 150px;
+            background: #EFE7E7;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+            padding: 0;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .confirm-header {
+            color: #000;
+            font-family: Roboto;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            padding: 7px 0px 8px 8px;
+
+        }
+
+        .custom-line {
+            height: 1px;
+            background-color: #95848459;
+            border: none;
+            margin-top: 0px;
+            margin-bottom: 7px;
+        }
+
+        .close-popup {
+            position: absolute;
+            top: auto;
+            right: 12px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .confirm-body {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 30px;
+            color: #000;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: medium;
+            line-height: normal;
+        }
+
+        .ok-body {
+            display: flex;
+            align-items: center;
+            gap: 35px;
+            padding: 10px 45px;
+            color: #000;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+        }
+
+        .confirm-buttons {
+            display: flex;
+            justify-content: flex-end;
+            /* <-- Căn phải */
+            gap: 10px;
+            padding: 2px 40px 16px;
+        }
+
+        .ok-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            padding: 2px 40px 16px;
+
+        }
+
+        .btn-confirm {
+            background: #1EB3EE;
+            color: black;
+            border: 0.5px solid #5193D5;
+            padding: 2px 10px;
+            border-radius: 10px;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            cursor: pointer;
+            width: 84px;
+            height: 25px;
+
+        }
+
+
+        .btn-cancel-confirm {
+            background: #B3AAAA;
+            color: black;
+            border: none;
+            padding: 2px 10px;
+            border-radius: 10px;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            cursor: pointer;
+            width: 84px;
+            height: 25px;
+        }
+
+        .btn-ok {
+            background: #B3AAAA;
+            color: black;
+            border: none;
+            /* display: flex;
+            justify-content: center; */
+            padding: 2px 10px;
+            border-radius: 10px;
+
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            cursor: pointer;
+            width: 84px;
+            height: 25px;
+        }
+
+        .ticket-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
+            margin: 4px 0;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="navbar">
+        <div class="logo"><img src="../icons/logo.svg" /></div>
+        <nav>
+            <ul>
+                <a href="../index.html" style="text-decoration: none; color: inherit;">
+                    <li>TRANG CHỦ</li>
+                </a>
+                <a href="../movies.html" style="text-decoration: none; color: inherit;">
+                    <li>PHIM</li>
+                </a>
+                <li>TIN MỚI</li>
+                <li style="font-weight: bold; color: red;">VÉ
+                    CỦA TÔI</li>
+                <li>CABA HOÀNG MAI <img src="../icons/dropdown.svg" alt="Search" /></li>
+
+            </ul>
+        </nav>
+        <div class="search-user">
+            <div class="search-box">
+                <div class="search-icon">
+                    <img src="../icons/search.svg" alt="Search" />
+                </div>
+                <div class="separator"></div>
+                <input type="text" placeholder="Tìm kiếm..." />
+            </div>
+            <div class="notify-icon">
+                <img src="../icons/notify.svg" alt="Notify Icon" />
+            </div>
+            <div class="user">MINH CHIẾN</div>
+            <a href="../Profile/profile.html">
+                <div class="user-icon">
+                    <img src="../icons/avatar.svg" alt="User Icon" />
+                </div>
+            </a>
+        </div>
+
+    </header>
+
+    <!-- Main Content -->
+    <main>
+
+        <div class="center-rectangle">
+            <h3 style="margin-top: 0;">LỊCH SỬ ĐẶT VÉ</h3>
+            <p style="color: red; font-size: 13px; margin-top: 15px; margin-left: 95px; font-weight: 600;">*Vé chỉ
+                được huỷ trước
+                thời
+                gian chiếu</p>
+
+            <div class="filter-tabs">
+                <a href="history.html" style="text-decoration: none; color: inherit;">
+                    <span class="active">XEM TOÀN BỘ</span>
+                </a>
+                <a href="timehistory.html" style="text-decoration: none; color: inherit;">
+                    <span>XEM THEO THỜI GIAN</span>
+                </a>
+            </div>
+
+
+            <!-- Vé 1 -->
+            <div class="ticket-card">
+                <div class="ticket-row" data-id="1" id="ticket-1">
+                    <div class="ticket-poster">
+                        <img src="../images/movies/dora.png" alt="Poster" />
+                    </div>
+                    <div class="ticket-info">
+                        <div class="ticket-info">
+                            <div class="info-row">
+                                <span class="label">Tên phim:</span>
+                                <span class="value">DORAEMON: NOBITA VÀ CUỘC PHIÊU LƯU VÀO THẾ GIỚI TRONG TRANH</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="label">Thời lượng:</span>
+                                <span class="value">105 phút</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="label">Ngày:</span>
+                                <span class="value">21/06/2025</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="label">Giá vé:</span>
+                                <span class="value">70 000 VND</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="ticket-buttons">
+                        <button class="btn-detail" onclick="window.location.href='detail.html?film=doraemon'">Xem chi
+                            tiết</button>
+                        <button class="btn-cancel" onclick="openConfirmPopup('1')">Huỷ vé</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Vé 2 -->
+            <div class="ticket-card">
+                <div class="ticket-row" data-id="2" id="ticket-2">
+                    <div class="ticket-poster">
+                        <img src="../images/movies/film15.png" alt="Poster" />
+                    </div>
+                    <div class="ticket-info">
+                        <div class="ticket-info">
+                            <div class="info-row">
+                                <span class="label">Tên phim:</span>
+                                <span class="value">BỘ 5 SIÊU ĐẲNG CẤP-T16</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="label">Thời lượng:</span>
+                                <span class="value">119 phút</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="label">Ngày:</span>
+                                <span class="value">14/06/2025</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="label">Giá vé:</span>
+                                <span class="value">75 000 VND</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="ticket-buttons">
+                        <button class="btn-detail" onclick="window.location.href='detail.html?film=bo5'">Xem chi
+                            tiết</button>
+                        <button class="btn-cancel" onclick="openConfirmPopup('2')">Huỷ vé</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vé 3 -->
+            <div class="ticket-card">
+                <div class="ticket-row" data-id="3" id="ticket-3">
+                    <div class="ticket-poster">
+                        <img src="../images/movies/nhiemvubatkhathi.svg" alt="Poster" />
+                    </div>
+                    <div class="ticket-info">
+                        <div class="ticket-info">
+                            <div class="info-row">
+                                <span class="label">Tên phim:</span>
+                                <span class="value">NHIỆM VỤ: BẤT KHẢ THI – NGHIỆP BÁO CUỐI CÙNG</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="label">Thời lượng:</span>
+                                <span class="value">169 phút</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="label">Ngày:</span>
+                                <span class="value">01/06/2025</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="label">Giá vé:</span>
+                                <span class="value">90 000 VND</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="ticket-buttons">
+                        <button class="btn-detail" onclick="window.location.href='detail.html?film=nhiemvu'">Xem chi
+                            tiết</button>
+
+                    </div>
+                </div>
+            </div>
+            <!-- Vé 4 -->
+            <!-- <div class="ticket-row">
+                    <div class="ticket-poster">
+                        <img src="../images/movies/film14.png" alt="Poster" />
+                    </div>
+                    <div class="ticket-info">
+                        <div class="ticket-info">
+                            <div class="info-row">
+                                <span class="label">Tên phim:</span>
+                                <span class="value">SIÊU NHÂN NHÍ ĐẠI NÁO RỪNG XANH</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="label">Thời lượng:</span>
+                                <span class="value">81 phút</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="label">Ngày:</span>
+                                <span class="value">15/04/2025</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="label">Giá vé:</span>
+                                <span class="value">105 000 VND</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="ticket-buttons">
+                        <button class="btn-detail" onclick="window.location.href='detail.html?film=sieunhannhi'">Xem chi
+                            tiết</button>
+                    </div>
+                </div> -->
+        </div>
+
+
+    </main>
+
+    <!-- Popup xác nhận -->
+    <div id="confirmPopup" class="confirm-overlay">
+        <div class="confirm-content">
+            <div class="confirm-header">
+                Thông báo xác nhận
+                <button class="close-popup" onclick="closeConfirmPopup()">
+                    <img src="../icons/close.svg" />
+                </button>
+            </div>
+            <hr class="custom-line" />
+            <div class="confirm-body">
+                <img src="../icons/question.svg" width="48" alt="?" />
+                <p>Bạn có chắc chắn muốn huỷ vé không ?</p>
+            </div>
+            <div class="confirm-buttons">
+                <button class="btn-confirm" id="confirmBtn" onclick="handleConfirm()">Xác nhận</button>
+                <button class="btn-cancel-confirm" onclick="closeConfirmPopup()">Hủy bỏ</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Popup thành công -->
+    <div id="successPopup" class="confirm-overlay">
+        <div class="confirm-content">
+            <div class="confirm-header">
+                Thông báo
+                <button class="close-popup" pup') onclick="closePopup('successPopup')">
+                    <img src="../icons/close.svg" />
+                </button>
+            </div>
+            <hr class="custom-line" />
+            <div class="ok-body">
+                <img src="../icons/success.svg" width="48" alt="?" />
+                <p style="margin-left: 40px;"> Huỷ vé thành công !</p>
+            </div>
+            <div class="ok-buttons">
+                <button class="btn-ok" onclick="closePopup('successPopup')">OK</button>
+            </div>
+
+        </div>
+    </div>
+    <script>
+        let selectedTicketId = null;
+
+        // Mở popup xác nhận
+        function openConfirmPopup(ticketId) {
+            selectedTicketId = ticketId;
+            document.getElementById("confirmPopup").style.display = "flex"; // hiện popup xác nhận
+        }
+
+        // Đóng popup xác nhận
+        function closeConfirmPopup() {
+            selectedTicketId = null;
+            document.getElementById("confirmPopup").style.display = "none";
+        }
+
+        // Xử lý xác nhận huỷ vé
+        function handleConfirm() {
+            if (selectedTicketId) {
+                const ticketElement = document.getElementById("ticket-" + selectedTicketId);
+                if (ticketElement) {
+                    ticketElement.style.display = "none"; // Ẩn vé đã huỷ
+                }
+
+                // Đóng popup xác nhận
+                closeConfirmPopup();
+
+                // Mở popup huỷ thành công
+                document.getElementById("successPopup").style.display = "flex";
+            }
+        }
+
+        // Đóng popup thành công
+        function closePopup(popupId) {
+            document.getElementById(popupId).style.display = "none";
+        }
+    </script>
+
+
+
+</html>

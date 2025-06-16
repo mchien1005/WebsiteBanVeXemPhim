@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CABA Cinema</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .dropdown-results {
+            position: absolute;
+            top: 110%;
+            /* ngay dưới search box */
+            left: 0;
+            width: 100%;
+            background: #B0ACAC;
+            border-radius: 8px;
+            padding: 10px;
+            z-index: 1000;
+            display: none;
+            max-height: 300px;
+            overflow-y: auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .dropdown-results h4 {
+            color: black;
+            margin: 0 0 10px;
+        }
+
+        .movies-item {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 10px;
+            background: transparent;
+            border-radius: 5px;
+            padding: 5px;
+            align-items: center;
+        }
+
+        .movies-item img {
+            width: 50px;
+            height: 70px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        .movies-info {
+            color: black;
+        }
+
+        .movies-info h3 {
+            margin: 0;
+            font-size: 15px;
+        }
+
+        .movies-info p {
+            margin: 4px 0 0;
+            font-size: 13px;
+        }
+
+        .not-found {
+            color: white;
+            font-size: 14px;
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="navbar">
+        <div class="logo"><img src="icons\logo.svg" /></div>
+        <nav>
+            <ul>
+                <a href="index.html" style="text-decoration: none; color: inherit;">
+                    <li>TRANG CHỦ</li>
+                </a>
+                <a href="movies.html" style="text-decoration: none; color: inherit;">
+                    <li>PHIM</li>
+                </a>
+                <li>TIN MỚI</li>
+                <a href="../HistoryBooking/history.html" style="text-decoration: none; color: inherit;">
+                    <li>VÉ CỦA TÔI</li>
+                </a>
+
+                <li>CABA HOÀNG MAI <img src="icons\dropdown.svg" alt="Search" /></li>
+            </ul>
+        </nav>
+        <div class="search-user">
+            <div class="search-box" style="position: relative;">
+                <div class="search-icon">
+                    <img src="icons/search.svg" alt="Search" />
+                </div>
+                <div class="separator"></div>
+                <input type="text" id="searchInput" placeholder="Tìm kiếm..." />
+
+                <div id="dropdownResults" class="dropdown-results"></div>
+            </div>
+
+            <div class="notify-icon">
+                <img src="icons/notify.svg" alt="Notify Icon" />
+            </div>
+            <div class="user">MINH CHIẾN</div>
+            <a href="../Profile/profile.html">
+                <div class="user-icon">
+                    <img src="icons/avatar.svg" alt="User Icon" />
+                </div>
+            </a>
+
+        </div>
+
+    </header>
+
+    <!-- Banner -->
+    <div class="banner-container">
+        <button class="arrow left" onclick="prevSlide()">
+            <img src="icons\arrowleft.svg" alt="Previous" />
+        </button>
+        <div class="banner-wrapper">
+            <div class="banner-slide" id="banner-slide">
+                <img src="images\banner1.png" alt>
+                <img src="images\banner2.png" alt>
+                <img src="images\banner3.png" alt>
+            </div>
+        </div>
+        <button class="arrow right" onclick="nextSlide()">
+            <img src="icons\arrowright.svg" alt="Next" />
+        </button>
+    </div>
+
+    <hr class="custom-line">
+
+    <!-- Phim đang chiếu -->
+    <section class="movie-section">
+        <h2>PHIM ĐANG CHIẾU</h2>
+        <button class="showing-arrow showing-left" onclick="prevComingSlide()"><img src="icons\arrowleft.svg"
+                alt="Previous" /></button>
+        <div class="movie-carousel-container">
+
+            <div class="movie-carousel" id="coming-carousel">
+                <div class="movie-item" onclick="toggleButtons(this)">
+                    <div class="movie-thumbnail">
+                        <img src="images/movies/dora.png" alt="Phim 1">
+                        <div class="movie-buttons">
+                            <button class="svg-button">
+                                <img src="icons/ButtonBuy.svg" alt="Trailer">
+                                <span>TRAILER</span>
+                            </button>
+                            <button class="svg-button">
+                                <img src="icons/ButtonBuy.svg" alt=" Mua vé">
+                                <span>ĐẶT VÉ</span>
+                            </button>
+
+                        </div>
+                    </div>
+                    <p>DORAEMON: NOBITA VÀ CU...</p>
+                </div>
+
+                <!-- Phim 2 -->
+                <div class="movie-item" onclick="toggleButtons(this)">
+                    <div class="movie-thumbnail">
+                        <img src="images/movies/film2.png" alt="Phim 2">
+                        <div class="movie-buttons">
+                            <button class="svg-button">
+                                <img src="icons/ButtonBuy.svg" alt="Trailer">
+                                <span>TRAILER</span>
+                            </button>
+                            <button class="svg-button">
+                                <img src="icons/ButtonBuy.svg" alt="Mua vé">
+                                <span>ĐẶT VÉ</span>
+                            </button>
+                        </div>
+                    </div>
+                    <p>LILO & STITCH</p>
+                </div>
+
+                <!-- Phim 3 -->
+                <div class="movie-item" onclick="toggleButtons(this)">
+                    <div class="movie-thumbnail">
+                        <img src="images/movies/film3.png" alt="Phim 3">
+                        <div class="movie-buttons">
+                            <button class="svg-button">
+                                <img src="icons/ButtonBuy.svg" alt="Trailer">
+                                <span>TRAILER</span>
+                            </button>
+                            <button class="svg-button">
+                                <img src="icons/ButtonBuy.svg" alt="Mua vé">
+                                <span>ĐẶT VÉ</span>
+                            </button>
+                        </div>
+                    </div>
+                    <p>LẬT MẶT 8: VÒNG TAY NÂNG</p>
+                </div>
+
+                <!-- Phim 4 -->
+                <div class="movie-item" onclick="toggleButtons(this)">
+                    <div class="movie-thumbnail">
+                        <img src="images/movies/film4.png" alt="Phim 4">
+                        <div class="movie-buttons">
+                            <button class="svg-button">
+                                <img src="icons/ButtonBuy.svg" alt="Trailer">
+                                <span>TRAILER</span>
+                            </button>
+                            <button class="svg-button">
+                                <img src="icons/ButtonBuy.svg" alt="Mua vé">
+                                <span>ĐẶT VÉ</span>
+                            </button>
+                        </div>
+                    </div>
+                    <p>DẾ MÈN: CUỘC PHIÊU LƯU</p>
+                </div>
+
+                <!-- Phim 5 -->
+                <div class="movie-item" onclick="toggleButtons(this)">
+                    <div class="movie-thumbnail">
+                        <img src="images/movies/film5.png" alt="Phim 5">
+                        <div class="movie-buttons">
+                            <button class="svg-button">
+                                <img src="icons/ButtonBuy.svg" alt="Trailer">
+                                <span>TRAILER</span>
+                            </button>
+                            <button class="svg-button">
+                                <img src="icons/ButtonBuy.svg" alt="Mua vé">
+                                <span>ĐẶT VÉ</span>
+                            </button>
+                        </div>
+                    </div>
+                    <p>YÊU EM... EM CẢM ƠN!</p>
+                </div>
+
+                <!-- Phim 6 -->
+                <div class="movie-item" onclick="toggleButtons(this)">
+                    <div class="movie-thumbnail">
+                        <img src="images/movies/film6.png" alt="Phim 6">
+                        <div class="movie-buttons">
+                            <button class="svg-button">
+                                <img src="icons/ButtonBuy.svg" alt="Trailer">
+                                <span>TRAILER</span>
+                            </button>
+                            <button class="svg-button">
+                                <img src="icons/ButtonBuy.svg" alt="Mua vé">
+                                <span>ĐẶT VÉ</span>
+                            </button>
+                        </div>
+                    </div>
+                    <p>YAADANG: BA MẶT LẬT KÈO</p>
+                </div>
+
+                <!-- Phim 7 -->
+                <div class="movie-item" onclick="toggleButtons(this)">
+                    <div class="movie-thumbnail">
+                        <img src="images/movies/film13.png" alt="Phim 7">
+                        <div class="movie-buttons">
+                            <button class="svg-button">
+                                <img src="icons/ButtonBuy.svg" alt="Trailer">
+                                <span>TRAILER</span>
+                            </button>
+                            <button class="svg-button">
+                                <img src="icons/ButtonBuy.svg" alt="Mua vé">
+                                <span>ĐẶT VÉ</span>
+                            </button>
+                        </div>
+                    </div>
+                    <p>TÊN PHIM 7</p>
+                </div>
+            </div>
+        </div>
+        <button class="showing-arrow showing-right" onclick="nextComingSlide()"><img src="icons\arrowright.svg"
+                alt="Next" /></button>
+    </section>
+
+    <hr class="custom-line">
+    <!-- Phim sắp chiếu -->
+    <!-- Phim đang chiếu -->
+    <section class="movie-section">
+        <h2>PHIM SẮP CHIẾU</h2>
+
+        <button class="showing-arrow2 showing-left" onclick="prevShowingSlide()">
+            <img src="icons/arrowleft.svg" alt="Previous" />
+        </button>
+
+        <div class="movie-carousel-container">
+            <div class="movie-carousel" id="showing-carousel">
+                <!-- Phim 8 -->
+                <div class="movie-item" onclick="toggleButtons(this)">
+                    <div class="movie-thumbnail">
+                        <img src="images/movies/film7.png" alt="Phim 8">
+                        <div class="movie-buttons">
+                            <button class="svg-button">
+                                <img src="icons/ButtonBuy.svg" alt="Trailer">
+                                <span>TRAILER</span>
+                            </button>
+                            <button class="svg-button">
+                                <img src="icons/ButtonBuy.svg" alt="Mua vé">
+                                <span>ĐẶT VÉ</span>
+                            </button>
+                        </div>
+                    </div>
+                    <p>DAN DA DAN: TÀ NHÃN</p>
+                </div>
+
+                <!-- Phim 9 -->
+                <div class="movie-item" onclick="toggleButtons(this)">
+                    <div class="movie-thumbnail">
+                        <img src="images/movies/film8.png" alt="Phim 9">
+                        <div class="movie-buttons">
+                            <button class="svg-button">
+                                <img src="icons/ButtonBuy.svg" alt="Trailer">
+                                <span>TRAILER</span>
+                            </button>
+                            <button class="svg-button">
+                                <img src="icons/ButtonBuy.svg" alt="Mua vé">
+                                <span>ĐẶT VÉ</span>
+                            </button>
+                        </div>
+                    </div>
+                    <p>TRẠNG QUỲNH NHÍ: TRUYỀ...</p>
+                </div>
+
+                <!-- Phim 10 -->
+                <div class="movie-item" onclick="toggleButtons(this)">
+                    <div class="movie-thumbnail">
+                        <img src="images/movies/film9.png" alt="Phim 10">
+                        <div class="movie-buttons">
+                            <button class="svg-button">
+                                <img src="icons/ButtonBuy.svg" alt="Trailer">
+                                <span>TRAILER</span>
+                            </button>
+                            <button class="svg-button">
+                                <img src="icons/ButtonBuy.svg" alt="Mua vé">
+                                <span>ĐẶT VÉ</span>
+                            </button>
+                        </div>
+                    </div>
+                    <p>ĐIỀU ƯỚC CUỐI CÙNG</p>
+                </div>
+
+                <!-- Phim 11 -->
+                <div class="movie-item" onclick="toggleButtons(this)">
+                    <div class="movie-thumbnail">
+                        <img src="images/movies/film10.png" alt="Phim 11">
+                        <div class="movie-buttons">
+                            <button class="svg-button">
+                                <img src="icons/ButtonBuy.svg" alt="Trailer">
+                                <span>TRAILER</span>
+                            </button>
+                            <button class="svg-button">
+                                <img src="icons/ButtonBuy.svg" alt="Mua vé">
+                                <span>ĐẶT VÉ</span>
+                            </button>
+                        </div>
+                    </div>
+                    <p>MANG MẸ ĐI BỎ</p>
+                </div>
+
+                <!-- Phim 12 -->
+                <div class="movie-item" onclick="toggleButtons(this)">
+                    <div class="movie-thumbnail">
+                        <img src="images/movies/film11.png" alt="Phim 12">
+                        <div class="movie-buttons">
+                            <button class="svg-button">
+                                <img src="icons/ButtonBuy.svg" alt="Trailer">
+                                <span>TRAILER</span>
+                            </button>
+                            <button class="svg-button">
+                                <img src="icons/ButtonBuy.svg" alt="Mua vé">
+                                <span>ĐẶT VÉ</span>
+                            </button>
+                        </div>
+                    </div>
+                    <p>ÚT LAN: OÁN LINH GIỮ CỦA</p>
+                </div>
+
+                <!-- Phim 13 -->
+                <div class="movie-item" onclick="toggleButtons(this)">
+                    <div class="movie-thumbnail">
+                        <img src="images/movies/film12.png" alt="Phim 13">
+                        <div class="movie-buttons">
+                            <button class="svg-button">
+                                <img src="icons/ButtonBuy.svg" alt="Trailer">
+                                <span>TRAILER</span>
+                            </button>
+                            <button class="svg-button">
+                                <img src="icons/ButtonBuy.svg" alt="Mua vé">
+                                <span>ĐẶT VÉ</span>
+                            </button>
+                        </div>
+                    </div>
+                    <p>BÍ KÍP LUYỆN RỒNG</p>
+                </div>
+            </div>
+        </div>
+
+        <button class="showing-arrow2 showing-right" onclick="nextShowingSlide()">
+            <img src="icons/arrowright.svg" alt="Next" />
+        </button>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-left">
+            <p><strong>CABA Việt Nam</strong></p>
+            <p>Địa chỉ: 175 Tây Sơn, Đống Đa, Hà Nội</p>
+            <p>Hotline: 1900 12356</p>
+            <p>Email: cabavietnam@gmail.com</p>
+        </div>
+        <div class="footer-center">
+            <p><strong>Điều khoản sử dụng</strong></p>
+            <p>Điều Khoản Chung</p>
+            <p>Điều Khoản Giao Dịch</p>
+            <p>Chính Sách Thanh Toán</p>
+        </div>
+        <div class="footer-center2">
+            <img src="icons/bocongthuong.svg" alt="CABA Logo" />
+        </div>
+        <div class="footer-right">
+            <p><strong>Kết nối với chúng tôi</strong></p>
+            <div class="social-icons">
+                <img src="icons/facebook.svg" alt="Facebook" />
+                <img src="icons/insta.svg" alt="Instagram" />
+                <img src="icons/tiktok.svg" alt="TikTok" />
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
+<script>
+    let index = 0;
+    const slide = document.getElementById("banner-slide");
+    const totalSlides = slide.children.length;
+
+    function updateSlide() {
+        slide.style.transform = `translateX(-${index * 1200}px)`;
+    }
+
+    function nextSlide() {
+        index = (index + 1) % totalSlides;
+        updateSlide();
+    }
+
+    function prevSlide() {
+        index = (index - 1 + totalSlides) % totalSlides;
+        updateSlide();
+    }
+
+    // Tự động trượt mỗi 5 giây
+    setInterval(nextSlide, 5000);
+
+    function toggleButtons(item) {
+        // Đóng các phim khác nếu đang mở
+        document.querySelectorAll('.movie-item').forEach(el => {
+            if (el !== item) {
+                el.classList.remove('show-buttons');
+            }
+        });
+
+        // Toggle phim được nhấn
+        item.classList.toggle('show-buttons');
+    }
+
+</script>
+
+<script>
+    let comingSlideIndex = 0;
+    const comingCarousel = document.getElementById("coming-carousel");
+    const movieWidth = 186; // width + gap
+
+    function nextComingSlide() {
+        const totalItems = comingCarousel.children.length;
+        if (comingSlideIndex < totalItems - 5) {
+            comingSlideIndex++;
+            comingCarousel.style.transform = `translateX(-${movieWidth * comingSlideIndex}px)`;
+        }
+    }
+
+    function prevComingSlide() {
+        if (comingSlideIndex > 0) {
+            comingSlideIndex--;
+            comingCarousel.style.transform = `translateX(-${movieWidth * comingSlideIndex}px)`;
+        }
+    }
+</script>
+
+<script>
+    let showingSlideIndex = 0;
+    const showingCarousel = document.getElementById("showing-carousel");
+    const showingMovieWidth = 186; // width + gap giống phần sắp chiếu
+
+    function nextShowingSlide() {
+        const totalItems = showingCarousel.children.length;
+        if (showingSlideIndex < totalItems - 5) {
+            showingSlideIndex++;
+            showingCarousel.style.transform = `translateX(-${showingMovieWidth * showingSlideIndex}px)`;
+        }
+    }
+
+    function prevShowingSlide() {
+        if (showingSlideIndex > 0) {
+            showingSlideIndex--;
+            showingCarousel.style.transform = `translateX(-${showingMovieWidth * showingSlideIndex}px)`;
+        }
+    }
+</script>
+<script>
+    const movies = [
+        {
+            name: "Doraemon: Nobita Và Cuộc Phiêu Lưu Vào Thế Giới Trong Tranh",
+            code: "T18",
+            year: "2025",
+            duration: "1h45p",
+            durationMinutes: 105,
+            poster: "images/movies/dora.png",
+            genre: ["Hoạt hình", "Phiêu lưu"],
+            director: "Yukiyo Teramoto",
+            cast: ["Wasabi Mizuta", "Megumi Ōhara", "Yumi Kakazu", "Subaru Kimura", "Tomokazu Seki"],
+            language: "Tiếng Nhật",
+            releaseDate: "29/05/2025",
+            description:
+                "Thông qua món bảo bối mới của Doraemon, cả nhóm bạn bước vào thế giới trong một bức tranh nổi tiếng và bắt gặp cô bạn bí ẩn tên Claire. Cùng đến vương quốc Artoria để tìm viên ngọc Artoria Blue, nhóm phát hiện ra một truyền thuyết hủy diệt đang sống lại. Liệu họ có phá giải được lời nguyền và bảo vệ thế giới?",
+            showtimes: {
+                "01/06/2025": {
+                    IMAX: ["18:30", "20:40", "22:45"],
+                    "3D": ["19:00", "21:40", "23:00"]
+                },
+                "02/06/2025": {
+                    IMAX: ["17:30", "19:40"],
+                    "3D": ["20:00", "22:00"]
+                },
+                "03/06/2025": {
+                    IMAX: ["18:00", "21:00"],
+                    "3D": ["19:30"]
+                }
+            }
+        },
+        {
+            name: "Lilo & Stitch",
+            code: "VN01",
+            year: "2021",
+            duration: "1h58p",
+            durationMinutes: 118,
+            poster: "images/movies/film2.png",
+            genre: ["Hoạt hình", "Gia đình"],
+            director: "Dean DeBlois, Chris Sanders",
+            cast: ["Daveigh Chase", "Chris Sanders", "Tia Carrere"],
+            language: "Tiếng Anh",
+            releaseDate: "01/06/2021",
+            description:
+                "Một cô bé mồ côi tên Lilo tình cờ gặp một sinh vật ngoài hành tinh bị thất lạc – Stitch. Hai tâm hồn cô đơn gắn kết và cùng nhau tạo nên một gia đình kỳ lạ nhưng đầy yêu thương.",
+            showtimes: {
+                "01/06/2021": {
+                    IMAX: ["17:30", "20:00"],
+                    "3D": ["18:45", "21:15"]
+                }
+            }
+        },
+        {
+            name: "Lật Mặt 8: Vòng Tay Nâng",
+            code: "VN02",
+            year: "2024",
+            duration: "2h01p",
+            durationMinutes: 121,
+            poster: "images/movies/film3.png",
+            genre: ["Hành động", "Tâm lý"],
+            director: "Lý Hải",
+            cast: ["Ốc Thanh Vân", "Huy Khánh", "Huỳnh Đông"],
+            language: "Tiếng Việt",
+            releaseDate: "26/04/2024",
+            description:
+                "Phần 8 của loạt phim 'Lật Mặt', tiếp tục kể về những mối quan hệ gia đình, lòng tin và sự phản bội. Khi những bí mật trong quá khứ được phơi bày, mọi thứ đều có thể bị đánh đổi.",
+            showtimes: {
+                "26/04/2024": {
+                    "2D": ["16:00", "19:00", "21:30"]
+                }
+            }
+        },
+        {
+            name: "Dế Mèn: Cuộc Phiêu Lưu",
+            code: "VN03",
+            year: "2023",
+            duration: "1h50p",
+            durationMinutes: 110,
+            poster: "images/movies/film4.png",
+            genre: ["Hoạt hình", "Phiêu lưu"],
+            director: "Nguyễn Quang Dũng",
+            cast: ["Lồng tiếng bởi nhiều nghệ sĩ Việt"],
+            language: "Tiếng Việt",
+            releaseDate: "10/09/2023",
+            description:
+                "Dựa theo tác phẩm nổi tiếng 'Dế Mèn Phiêu Lưu Ký', bộ phim hoạt hình Việt Nam đưa người xem theo chân Dế Mèn trong hành trình khám phá thế giới và khám phá giá trị bản thân.",
+            showtimes: {
+                "10/09/2023": {
+                    "2D": ["15:00", "17:30", "20:00"]
+                }
+            }
+        },
+        {
+            name: "Dan Dan Dan: Tà Nhãn",
+            code: "VN04",
+            year: "2023",
+            duration: "1h42p",
+            durationMinutes: 102,
+            poster: "images/movies/film7.png",
+            genre: ["Hoạt hình", "Hài", "Hành động", "Siêu nhiên"],
+            director: "Fuga Yamashiro",
+            cast: ["Shion Wakayama", "Toshiyuki Toyonaga", "Mikako Komatsu"],
+            language: "Tiếng Nhật",
+            releaseDate: "15/07/2023",
+            description:
+                "Một cô gái tin vào linh hồn và một chàng trai tin vào người ngoài hành tinh bất ngờ bị cuốn vào chuỗi sự kiện kỳ lạ liên quan đến thế lực siêu nhiên và người ngoài hành tinh. Họ phải chiến đấu để bảo vệ nhau và giải mã thế giới chưa từng thấy.",
+            showtimes: {
+                "01/06/2021": {
+                    IMAX: ["17:30", "20:00"],
+                    "3D": ["18:45", "21:15"]
+                }
+            }
+        },
+        {
+            name: "Mang Mẹ Đi Bỏ",
+            code: "VN05",
+            year: "2023",
+            duration: "1h48p",
+            durationMinutes: 108,
+            poster: "images/movies/film10.png",
+            genre: ["Hoạt hình", "Gia đình", "Tình cảm"],
+            director: "Trần Khánh Duy",
+            cast: ["Lồng tiếng bởi nghệ sĩ Việt như Hồng Ánh, Quốc Khánh"],
+            language: "Tiếng Việt",
+            releaseDate: "20/10/2023",
+            description:
+                "Bé Mít lên kế hoạch 'mang mẹ đi bỏ' vì tức giận với những quy định nghiêm khắc. Trên hành trình đó, bé dần nhận ra những hi sinh thầm lặng của mẹ và học cách trưởng thành, yêu thương và tha thứ.",
+            showtimes: {
+                "01/06/2021": {
+                    IMAX: ["17:30", "20:00"],
+                    "3D": ["18:45", "21:15"]
+                }
+            }
+        }
+    ];
+
+    const searchInput = document.getElementById("searchInput");
+    const dropdown = document.getElementById("dropdownResults");
+
+    searchInput.addEventListener("input", () => {
+        const keyword = searchInput.value.toLowerCase().trim();
+        dropdown.innerHTML = "";
+        dropdown.style.display = "block";
+
+        if (keyword === "") {
+            dropdown.style.display = "none";
+            return;
+        }
+
+        const filtered = movies.filter(movie =>
+            movie.name.toLowerCase().includes(keyword)
+        );
+
+        dropdown.innerHTML = `<h4>Danh sách phim</h4>`;
+
+        if (filtered.length === 0) {
+            dropdown.innerHTML += `<div class="not-found">Rất tiếc, không tìm thấy phim phù hợp với lựa chọn của bạn</div>`;
+        } else {
+            filtered.forEach(movie => {
+                const movieItem = document.createElement("div");
+                movieItem.className = "movies-item";
+                movieItem.setAttribute("data-code", movie.code);
+                movieItem.innerHTML = `
+       <img src="${movie.poster}" alt="${movie.name}">
+       <div class="movies-info">
+           <h3>${movie.name}</h3>
+           <p>${movie.code} • ${movie.year} • ${movie.duration}</p>
+       </div>
+   `;
+                movieItem.addEventListener("click", () => {
+                    window.location.href = `chitietmovie.html?code=${movie.code}`;
+                });
+                dropdown.appendChild(movieItem);
+            });
+
+
+        }
+    });
+
+    // Ẩn dropdown khi click ra ngoài
+    document.addEventListener("click", function (event) {
+        const isClickInside = searchInput.parentElement.contains(event.target);
+        if (!isClickInside) {
+            dropdown.style.display = "none";
+        }
+    });
+</script>

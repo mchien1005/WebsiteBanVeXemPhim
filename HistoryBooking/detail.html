@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CABA Cinema</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    <link rel="stylesheet" href="../css/movie.css">
+    <style>
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: calc(100vh - 65px);
+            /* trừ header nếu có */
+            background: transparent;
+        }
+
+        .center-rectangle {
+            width: 1107px;
+            height: 573px;
+            background-color: #FFD7C4;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 10px;
+            padding: 20px 40px;
+            box-sizing: border-box;
+            overflow-y: auto;
+        }
+
+        /* .center-rectangle {
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 1000px;
+            margin: 0 auto;
+        } */
+
+        h3 {
+            margin-top: 0;
+            font-size: 14px;
+        }
+
+        .back-link {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+        }
+
+        .note {
+            color: red;
+            font-size: 13px;
+            margin-top: 15px;
+            margin-left: 95px;
+            font-weight: 600;
+        }
+
+        table {
+            width: 100%;
+            margin-top: 60px;
+            border-collapse: collapse;
+            font-size: 12px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+            /* để bo góc áp dụng cả phần nội dung bên trong */
+        }
+
+        th,
+        td {
+            padding: 20px 12px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        th {
+            font-weight: bold;
+        }
+
+        tr {
+            background-color: white;
+        }
+
+        tbody tr {
+            display: none;
+            /* Ẩn tất cả phim mặc định */
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="navbar">
+        <div class="logo"><img src="../icons/logo.svg" /></div>
+        <nav>
+            <ul>
+                <a href="../index.html" style="text-decoration: none; color: inherit;">
+                    <li>TRANG CHỦ</li>
+                </a>
+                <a href="../movies.html" style="text-decoration: none; color: inherit;">
+                    <li>PHIM</li>
+                </a>
+                <li>TIN MỚI</li>
+                <li style="font-weight: bold; color: red;">VÉ CỦA TÔI</li>
+                <li>CABA HOÀNG MAI <img src="../icons/dropdown.svg" alt="Search" /></li>
+
+            </ul>
+        </nav>
+        <div class="search-user">
+            <div class="search-box">
+                <div class="search-icon">
+                    <img src="../icons/search.svg" alt="Search" />
+                </div>
+                <div class="separator"></div>
+                <input type="text" placeholder="Tìm kiếm..." />
+            </div>
+            <div class="notify-icon">
+                <img src="../icons/notify.svg" alt="Notify Icon" />
+            </div>
+            <div class="user">MINH CHIẾN</div>
+            <a href="../Profile/profile.html">
+                <div class="user-icon">
+                    <img src="../icons/avatar.svg" alt="User Icon" />
+                </div>
+            </a>
+        </div>
+
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="center-rectangle">
+            <h3><a href="history.html" class="back-link">&lt; LỊCH SỬ ĐẶT VÉ</a> / XEM CHI TIẾT</h3>
+            <p class="note">*Vé chỉ được huỷ trước thời gian chiếu</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tên phim</th>
+                        <th>Định dạng</th>
+                        <th>Thể loại</th>
+                        <th>Thời lượng</th>
+                        <th>Rạp</th>
+                        <th>Ngày</th>
+                        <th>Thời gian</th>
+                        <th>Phòng chiếu</th>
+                        <th>Ghế</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr data-film="doraemon">
+                        <td>DORAEMON: NOBITA VÀ CUỘC PHIÊU LƯU VÀO THẾ GIỚI TRONG TRANH</td>
+                        <td>2D</td>
+                        <td>Hoạt hình</td>
+                        <td>105 phút</td>
+                        <td>Đống Đa</td>
+                        <td>21/06/2025</td>
+                        <td>14:20</td>
+                        <td>Số 4</td>
+                        <td>A3</td>
+                    </tr>
+                    <tr data-film="nhiemvu">
+                        <td>NHIỆM VỤ: BẤT KHẢ THI – NGHIỆP BÁO CUỐI CÙNG</td>
+                        <td>2D</td>
+                        <td>Hành động</td>
+                        <td>169 phút</td>
+                        <td>CGV Vincom</td>
+                        <td>01/06/2025</td>
+                        <td>19:00</td>
+                        <td>Phòng 2</td>
+                        <td>B6</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <script>
+        // Lấy tên phim từ URL, ví dụ: detail.html?film=nhiemvu
+        const params = new URLSearchParams(window.location.search);
+        const film = params.get("film");
+
+        if (film) {
+            const row = document.querySelector(`tr[data-film="${film}"]`);
+            if (row) {
+                row.style.display = "table-row";
+            }
+        }
+    </script>
+
+</html>
