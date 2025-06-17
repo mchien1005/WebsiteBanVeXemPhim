@@ -149,7 +149,7 @@
                                 <img src="icons/ButtonBuy.svg" alt="Trailer">
                                 <span>TRAILER</span>
                             </button>
-                            <button class="svg-button">
+                            <button class="svg-button" onclick="goToMovieDetail('T18')">
                                 <img src="icons/ButtonBuy.svg" alt=" Mua vé">
                                 <span>ĐẶT VÉ</span>
                             </button>
@@ -168,7 +168,7 @@
                                 <img src="icons/ButtonBuy.svg" alt="Trailer">
                                 <span>TRAILER</span>
                             </button>
-                            <button class="svg-button">
+                            <button class="svg-button" onclick="goToMovieDetail('VN01')">
                                 <img src="icons/ButtonBuy.svg" alt="Mua vé">
                                 <span>ĐẶT VÉ</span>
                             </button>
@@ -186,7 +186,7 @@
                                 <img src="icons/ButtonBuy.svg" alt="Trailer">
                                 <span>TRAILER</span>
                             </button>
-                            <button class="svg-button">
+                            <button class="svg-button" onclick="goToMovieDetail('VN02')">
                                 <img src="icons/ButtonBuy.svg" alt="Mua vé">
                                 <span>ĐẶT VÉ</span>
                             </button>
@@ -204,7 +204,7 @@
                                 <img src="icons/ButtonBuy.svg" alt="Trailer">
                                 <span>TRAILER</span>
                             </button>
-                            <button class="svg-button">
+                            <button class="svg-button" onclick="goToMovieDetail('VN03')">
                                 <img src="icons/ButtonBuy.svg" alt="Mua vé">
                                 <span>ĐẶT VÉ</span>
                             </button>
@@ -273,7 +273,6 @@
     </section>
 
     <hr class="custom-line">
-    <!-- Phim sắp chiếu -->
     <!-- Phim đang chiếu -->
     <section class="movie-section">
         <h2>PHIM SẮP CHIẾU</h2>
@@ -293,7 +292,7 @@
                                 <img src="icons/ButtonBuy.svg" alt="Trailer">
                                 <span>TRAILER</span>
                             </button>
-                            <button class="svg-button">
+                            <button class="svg-button" onclick="goToMovieDetail('VN04')">
                                 <img src="icons/ButtonBuy.svg" alt="Mua vé">
                                 <span>ĐẶT VÉ</span>
                             </button>
@@ -429,6 +428,12 @@
 </body>
 
 </html>
+<script>
+    function goToMovieDetail(code) {
+        window.location.href = `chitietmovie.html?code=${code}`;
+    }
+</script>
+
 <script>
     let index = 0;
     const slide = document.getElementById("banner-slide");
