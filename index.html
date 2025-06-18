@@ -65,6 +65,242 @@
             text-align: center;
             margin-top: 10px;
         }
+
+        /* CSS cho thiết bị di động */
+        @media screen and (max-width: 768px) {
+
+            /* Header responsive */
+            .navbar {
+                flex-direction: column;
+                padding: 10px;
+            }
+
+            .navbar .logo {
+                margin-bottom: 10px;
+            }
+
+            .navbar ul {
+                flex-direction: column;
+                width: 100%;
+                padding: 0;
+            }
+
+            .navbar ul li {
+                margin: 8px 0;
+                padding: 8px 0;
+                width: 100%;
+                text-align: center;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .search-user {
+                width: 100%;
+                flex-direction: column;
+                margin-top: 10px;
+            }
+
+            .search-box {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+            .notify-icon,
+            .user,
+            .user-icon {
+                margin: 5px 0;
+            }
+
+            /* Banner responsive */
+            .banner-container {
+                height: 200px;
+            }
+
+            .banner-slide img {
+                height: 200px;
+            }
+
+            .banner-wrapper {
+                width: 100%;
+            }
+
+            .arrow {
+                width: 30px;
+                height: 30px;
+            }
+
+            /* Movie carousel responsive */
+            .movie-section h2 {
+                font-size: 18px;
+                text-align: center;
+                margin: 20px 0 10px;
+            }
+
+            .movie-carousel-container {
+                width: calc(100% - 70px);
+            }
+
+            .movie-carousel {
+                gap: 10px;
+            }
+
+            .movie-item {
+                width: 140px;
+            }
+
+            .movie-thumbnail img {
+                width: 140px;
+                height: 200px;
+            }
+
+            .movie-buttons {
+                flex-direction: column;
+            }
+
+            .svg-button {
+                padding: 6px;
+                font-size: 12px;
+            }
+
+            .movie-item p {
+                font-size: 12px;
+            }
+
+            .showing-arrow,
+            .showing-arrow2 {
+                width: 30px;
+                height: 30px;
+            }
+
+            /* Dropdown responsive */
+            .dropdown-results {
+                width: 90%;
+                left: 5%;
+                max-height: 250px;
+            }
+
+            .movies-item {
+                flex-direction: row;
+            }
+
+            .movies-info h3 {
+                font-size: 13px;
+            }
+
+            .movies-info p {
+                font-size: 11px;
+            }
+
+            /* Footer responsive */
+            footer {
+                flex-direction: column;
+                padding: 20px;
+                gap: 20px;
+                text-align: center;
+            }
+
+            .footer-left,
+            .footer-center,
+            .footer-center2,
+            .footer-right {
+                width: 100%;
+            }
+
+            .social-icons {
+                justify-content: center;
+                margin-top: 10px;
+            }
+
+            /* Animations và transitions */
+            .movie-carousel {
+                transition: transform 0.3s ease-in-out;
+            }
+
+            /* Ẩn một số phần tử không cần thiết trên mobile */
+            .separator {
+                display: none;
+            }
+
+            /* Hiển thị menu mobile */
+            .mobile-menu-toggle {
+                display: block;
+                position: absolute;
+                top: 15px;
+                right: 15px;
+                font-size: 24px;
+                color: #fff;
+                z-index: 100;
+            }
+
+            /* Phong cách cho popup trên thiết bị di động */
+            .popup-overlay {
+                padding: 10px;
+            }
+
+            .popup-container {
+                width: 95%;
+                max-height: 85vh;
+                flex-direction: column;
+            }
+
+            /* Căn chỉnh ảnh */
+            img {
+                max-width: 100%;
+                height: auto;
+            }
+        }
+
+        /* Bố cục đặc biệt cho điện thoại nhỏ */
+        @media screen and (max-width: 480px) {
+
+            /* Thiết lập movie grid thay vì carousel */
+            .movie-carousel-container {
+                width: 100%;
+                margin: 0 auto;
+            }
+
+            .movie-carousel {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+                padding: 0 10px;
+                transform: none !important;
+            }
+
+            .movie-item {
+                width: 100%;
+            }
+
+            .movie-thumbnail img {
+                width: 100%;
+                height: auto;
+                aspect-ratio: 2/3;
+                object-fit: cover;
+            }
+
+            /* Ẩn các nút cuộn trên mobile vì chuyển sang grid */
+            .showing-arrow,
+            .showing-arrow2,
+            .showing-left,
+            .showing-right {
+                display: none;
+            }
+
+            /* Banner nhỏ hơn */
+            .banner-container {
+                height: 150px;
+            }
+
+            .banner-slide img {
+                height: 150px;
+            }
+
+            /* Hiển thị chỉ 1 phim trên mỗi hàng đối với điện thoại rất nhỏ */
+            @media screen and (max-width: 350px) {
+                .movie-carousel {
+                    grid-template-columns: 1fr;
+                }
+            }
+        }
     </style>
 </head>
 
@@ -72,6 +308,8 @@
 
     <!-- Header -->
     <header class="navbar">
+        <!-- Thêm vào ngay sau thẻ mở <header class="navbar"> -->
+        <div class="mobile-menu-toggle" onclick="toggleMobileMenu()" style="display: none;">☰</div>
         <div class="logo"><img src="icons\logo.svg" /></div>
         <nav>
             <ul>
@@ -697,4 +935,24 @@
             dropdown.style.display = "none";
         }
     });
+
+
+    function toggleMobileMenu() {
+        const nav = document.querySelector('.navbar nav');
+        nav.classList.toggle('mobile-nav-visible');
+    }
+
+    // Điều chỉnh hiển thị nút menu mobile khi resize 
+    function checkMobileView() {
+        const menuToggle = document.querySelector('.mobile-menu-toggle');
+        if (window.innerWidth <= 768) {
+            menuToggle.style.display = 'block';
+        } else {
+            menuToggle.style.display = 'none';
+        }
+    }
+
+    // Chạy khi trang tải và khi resize window
+    window.addEventListener('load', checkMobileView);
+    window.addEventListener('resize', checkMobileView);
 </script>
