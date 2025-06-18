@@ -1,0 +1,625 @@
+<style>
+    .popup-overlay {
+        background: rgba(0, 0, 0, 0.8);
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+    }
+
+    .popup-container {
+        background: #D9D9D9;
+        border-radius: 20px;
+        width: 969px;
+        height: 573px;
+        overflow: hidden;
+        position: relative;
+        display: flex;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .left-section {
+        flex: 1;
+        padding: 30px;
+        background: #D9D9D9;
+    }
+
+    .screen-section {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .screen-label {
+        font-size: 14px;
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 15px;
+    }
+
+    .screen {
+        height: 8px;
+        position: relative;
+    }
+
+    .screen::before {
+        content: '';
+        position: absolute;
+        top: -2px;
+        left: -10px;
+        right: -10px;
+        height: 12px;
+        background: linear-gradient(45deg, #eee, #ccc);
+        border-radius: 50px;
+        z-index: -1;
+    }
+
+    .seats-grid {
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        gap: 4px;
+        margin-top: 80px;
+        margin-bottom: 30px;
+        max-width: 385px;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 10px;
+        background: #FFF;
+        padding: 10px;
+    }
+
+    .seat {
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 10px;
+        font-weight: 600;
+        color: #666;
+        transition: all 0.2s ease;
+        position: relative;
+        background: none;
+        border: none;
+        border-radius: 8px;
+    }
+
+    .seat-img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        transition: all 0.2s ease;
+    }
+
+    /* Màu nền cho các trạng thái ghế */
+    .seat.available {
+        background: transparent;
+    }
+
+    .seat.selected {
+
+        /* Màu blue khi chọn */
+        padding: 2px;
+    }
+
+    .seat.occupied {
+
+        /* Màu đỏ khi đã bán */
+        padding: 2px;
+    }
+
+    .seat.vip {
+
+        /* Màu vàng cho VIP */
+        padding: 2px;
+    }
+
+    .seat:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .seat.available {
+        border-color: #e0e0e0;
+        background: white;
+    }
+
+    /* .seat.selected {
+            border-color: #ff6b9d;
+            background: #ff6b9d;
+            color: white;
+        }
+
+        .seat.occupied {
+            border-color: #ff4757;
+            background: #ff4757;
+            color: white;
+            cursor: not-allowed;
+        }
+
+        .seat.vip {
+            border-color: #ffd700;
+            background: #fff9c4;
+        } */
+
+    .seat.vip.selected {
+        background: #ffd700;
+        border-color: #ffd700;
+    }
+
+    .legend {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-bottom: 30px;
+        margin-left: auto;
+        margin-right: auto;
+        flex-wrap: wrap;
+        border-radius: 10px;
+        background: #FFFEFE;
+        width: 506px;
+        height: 55px;
+
+    }
+
+    .legend-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 10px;
+        color: #666;
+    }
+
+    .legend-seat {
+        width: 20px;
+        height: 16px;
+        border-radius: 4px 4px 1px 1px;
+        border: 1px solid;
+    }
+
+    /* .legend-available {
+            background: white;
+            border-color: #ddd;
+        }
+
+        .legend-selected {
+            background: #ff6b9d;
+            border-color: #ff6b9d;
+        }
+
+        .legend-occupied {
+            background: #ff4757;
+            border-color: #ff4757;
+        }
+
+        .legend-vip {
+            background: #fff9c4;
+            border-color: #ffd700;
+        } */
+
+    .timer {
+        text-align: center;
+        color: #F00;
+        font-family: Roboto;
+        font-size: 25px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin-left: 90%;
+        margin-bottom: 20px;
+    }
+
+    .right-section {
+        margin-top: 40px;
+        margin-right: 20px;
+        width: 235.125px;
+        height: 353.912px;
+        border-radius: 10px;
+        background: #FFF;
+        border-left: 1px solid #eee;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .detail-row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 6px;
+        font-size: 14px;
+    }
+
+    .detail-label {
+        font-weight: 500;
+        color: #555;
+    }
+
+    .detail-value {
+        font-weight: 600;
+        color: #222;
+    }
+
+
+    .movie-poster {
+        width: 100%;
+        height: 200px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .poster-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .movie-details {
+        padding: 20px;
+        flex: 1;
+    }
+
+    .movie-title {
+        font-size: 14px;
+        font-weight: bold;
+        color: #4285f4;
+        margin-bottom: 15px;
+        line-height: 1.3;
+    }
+
+    .detail-row {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 2px;
+        margin-bottom: 2px;
+        font-size: 12px;
+    }
+
+    .detail-label {
+        color: #666;
+        font-weight: 500;
+    }
+
+    .detail-value {
+        color: #333;
+        font-weight: 600;
+    }
+
+    .book-buttonn {
+        margin: 20px;
+        color: white;
+        border-radius: 12px;
+        background: rgba(233, 1, 1, 0.62);
+        border: none;
+        padding: 5px;
+        font-size: 12px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .book-buttonn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(255, 107, 157, 0.4);
+    }
+
+    .close-btn {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background: rgba(0, 0, 0, 0.1);
+        border: none;
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        color: #666;
+        transition: all 0.2s ease;
+    }
+
+    .close-btn:hover {
+        background: rgba(0, 0, 0, 0.2);
+        color: #333;
+    }
+
+    /* .back-arrow {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        font-size: 24px;
+        color: #333;
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+
+    .back-arrow:hover {
+        color: #4285f4;
+        transform: translateX(-3px);
+    } */
+
+    @media (max-width: 768px) {
+        .popup-container {
+            flex-direction: column;
+            width: 95%;
+            max-height: 95vh;
+            overflow-y: auto;
+        }
+
+        .right-section {
+            width: 100%;
+        }
+
+        .seats-grid {
+            grid-template-columns: repeat(10, 1fr);
+            gap: 2px;
+        }
+
+        .seat {
+            width: 28px;
+            height: 24px;
+            font-size: 8px;
+        }
+    }
+
+    .duongvao {
+        position: absolute;
+        right: 0;
+        margin-right: 400px;
+    }
+
+    .confirm-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.3);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 2000;
+    }
+
+    .confirm-content {
+        width: 450px;
+        height: 150px;
+        background: #EFE7E7;
+        border-radius: 10px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+        padding: 0;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .confirm-header {
+        color: #000;
+        font-family: Roboto;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        padding: 7px 0px 8px 8px;
+
+    }
+
+    .custom-line {
+        height: 1px;
+        background-color: #95848459;
+        border: none;
+        margin-top: 0px;
+        margin-bottom: 7px;
+    }
+
+    .close-popup {
+        position: absolute;
+        top: auto;
+        right: 12px;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    .confirm-body {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 30px;
+        color: #000;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: medium;
+        line-height: normal;
+    }
+
+    .ok-body {
+        display: flex;
+        align-items: center;
+        gap: 35px;
+        padding: 10px 45px;
+        color: #000;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+    }
+
+    .confirm-buttons {
+        display: flex;
+        justify-content: flex-end;
+        /* <-- Căn phải */
+        gap: 10px;
+        padding: 2px 40px 16px;
+    }
+
+    .ok-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        padding: 2px 40px 16px;
+
+    }
+
+    .btn-confirm {
+        background: #1EB3EE;
+        color: black;
+        border: 0.5px solid #5193D5;
+        padding: 2px 10px;
+        border-radius: 10px;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        cursor: pointer;
+        width: 84px;
+        height: 25px;
+
+    }
+
+
+    .btn-cancel-confirm {
+        background: #B3AAAA;
+        color: black;
+        border: none;
+        padding: 2px 10px;
+        border-radius: 10px;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        cursor: pointer;
+        width: 84px;
+        height: 25px;
+    }
+
+    .btn-ok {
+        background: #B3AAAA;
+        color: black;
+        border: none;
+        /* display: flex;
+            justify-content: center; */
+        padding: 2px 10px;
+        border-radius: 10px;
+
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        cursor: pointer;
+        width: 84px;
+        height: 25px;
+    }
+</style>
+<div class="popup-overlay">
+    <div class="popup-container">
+        <!-- <button class="close-btn">&times;</button> -->
+        <!-- <div class="back-arrow">← </div> -->
+        <!-- <a href="chitietmovie.html?code=T18" class="back-link">←</a> -->
+
+        <div class="left-section">
+            <div class="screen-section">
+                <div class="screen">
+                    <img src="icons/screen.svg" alt="">
+                </div>
+                <div class="screen-label">Screen</div>
+            </div>
+            <div class="duongvao">
+                <img src="icons/vao.svg" alt="">
+            </div>
+            <div class="seats-grid" id="seatsGrid"></div>
+
+            <div class="legend">
+                <div class="legend-item">
+                    <img src="icons/ghe.svg" alt="">
+                    <!-- <div class="legend-seat legend-available"></div> -->
+                    <span>Ghế trống</span>
+                </div>
+                <div class="legend-item">
+                    <img src="icons/ghechon.svg" alt="" style="border-radius: 10px;">
+                    <!-- <div class="legend-seat legend-selected"></div> -->
+                    <span>Ghế đang chọn</span>
+                </div>
+                <div class="legend-item">
+                    <img src="icons/ghedanggiu.svg" alt="" style=" border-radius: 10px;">
+                    <!-- <div class="legend-seat legend-vip"></div> -->
+                    <span>Ghế đang được giữ</span>
+                </div>
+                <div class="legend-item">
+                    <img src="icons/ghedaban.svg" alt="" style="border-radius: 10px;">
+                    <!-- <div class="legend-seat legend-occupied"></div> -->
+                    <span>Ghế đã bán</span>
+                </div>
+            </div>
+
+            <div class="timer" id="timer">5:00</div>
+        </div>
+
+        <div class="right-section">
+            <div class="movie-info-header" style="display: flex; gap: 10px; ">
+                <img src="images/movies/dora.png" alt="Poster" class="poster-image"
+                    style="width: 112px; height: 168px; border-radius: 8px;" />
+                <div style="flex: 1;">
+                    <div class="movie-title" style="font-size: 12px; font-weight: bold; color: #1a73e8; width: 60%;">
+                        Doraemon: Nobita Và Cuộc Phiêu Lưu Vào Thế Giới Trong Tranh
+                    </div>
+                    <div style="margin-top: -10px;">IMAX</div>
+                </div>
+            </div>
+
+            <!-- <hr style="border: none; border-top: 1px solid #ccc; margin: 0;" /> -->
+
+            <div class="movie-details" style="padding: 0 10px;">
+                <div class="detail-row"><span class="detail-label">Thể loại</span><span class="detail-value">Hoạt
+                        hình, Phiêu
+                        lưu</span></div>
+                <div class="detail-row"><span class="detail-label">Thời lượng</span><span
+                        class="detail-value">105p</span></div>
+                <hr style="border: none; border-top: 1px solid #ccc; margin: 0;">
+                </hr>
+                <div class="detail-row"><span class="detail-label">Rạp</span><span class="detail-value">CABA Hoàng
+                        Mai</span>
+                </div>
+                <div class="detail-row"><span class="detail-label">Ngày</span><span
+                        class="detail-value">29/05/2025</span></div>
+                <div class="detail-row"><span class="detail-label">Thời gian</span><span
+                        class="detail-value">18:30</span></div>
+                <div class="detail-row"><span class="detail-label">Phòng chiếu</span><span
+                        class="detail-value">A1</span></div>
+                <div class="detail-row"><span class="detail-label">Ghế</span><span class="detail-value"
+                        id="selectedSeats">-</span></div>
+            </div>
+
+            <div style="text-align: end;">
+                <button class="book-buttonn" id="bookButton">Xác nhận</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div id="timeoutPopup" class="confirm-overlay" style="display: none;">
+    <div class="confirm-content">
+        <div class="confirm-header">
+            Thông báo
+            <button class="close-popup" onclick="closePopup('timeoutPopup')">
+                <img src="icons/close.svg" />
+            </button>
+        </div>
+        <hr class="custom-line" />
+        <div class="ok-body">
+            <img src="icons/warning.svg" width="48" alt="!" />
+            <p>Thời gian chọn ghế đã hết !!!</p>
+        </div>
+        <div class="ok-buttons">
+            <button class="btn-ok" onclick="handleTimeoutConfirm()">Xác nhận</button>
+        </div>
+    </div>
+</div>
