@@ -158,7 +158,7 @@
             alert('Vui lòng chọn ghế!');
             return;
         }
-        alert(`Xác nhận đặt ghế: ${selectedSeats.join(', ')}`);
+        // alert(`Xác nhận đặt ghế: ${selectedSeats.join(', ')}`);
     });
 
     // Initialize the app
@@ -183,7 +183,7 @@
       
       document.getElementById("bookButton").addEventListener("click", () => {
         if (selectedSeats.length === 0) {
-          alert("Vui lòng chọn ghế!");
+        //   alert("Vui lòng chọn ghế!");
           return;
         }
       

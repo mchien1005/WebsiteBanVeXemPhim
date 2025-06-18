@@ -413,43 +413,6 @@
 
 
   <script>
-
-    function showSeatPopup() {
-      fetch('popupghe.html')
-        .then(response => response.text())
-        .then(html => {
-          document.getElementById('popup-container').innerHTML = html;
-
-          // Tải file script sau khi HTML đã được thêm vào DOM
-          const script = document.createElement('script');
-          script.src = 'popupghe.js';
-          script.onload = () => {
-            // Chỉ gọi sau khi popupghe.js đã load
-            initializeSeats();
-            startTimer();
-          };
-          document.body.appendChild(script);
-
-          // Bấm ra ngoài popup thì đóng
-          const overlay = document.querySelector('.popup-overlay');
-          const container = document.querySelector('.popup-container');
-
-          overlay.addEventListener('click', function (e) {
-            if (!container.contains(e.target)) {
-              clearTimeout(timeoutId);
-
-              // Reset lại thời gian
-              timeLeft = 300;
-              document.getElementById('popup-container').innerHTML = '';
-            }
-          });
-        });
-    }
-
-
-  </script>
-
-  <script>
     // 1) Dữ liệu phim (phải có trường code và genre là mảng)
     const movies = [
       {
@@ -730,6 +693,39 @@
 
   </script>
   <script>
+    function showSeatPopup() {
+      fetch('popupghe.html')
+        .then(response => response.text())
+        .then(html => {
+          document.getElementById('popup-container').innerHTML = html;
+
+          // Tải file script sau khi HTML đã được thêm vào DOM
+          const script = document.createElement('script');
+          script.src = 'popupghe.js';
+          script.onload = () => {
+            // Chỉ gọi sau khi popupghe.js đã load
+            initializeSeats();
+            startTimer();
+          };
+          document.body.appendChild(script);
+
+          // Bấm ra ngoài popup thì đóng
+          const overlay = document.querySelector('.popup-overlay');
+          const container = document.querySelector('.popup-container');
+
+          overlay.addEventListener('click', function (e) {
+            if (!container.contains(e.target)) {
+              clearTimeout(timeoutId);
+
+              // Reset lại thời gian
+              timeLeft = 300;
+
+              document.getElementById('popup-container').innerHTML = '';
+            }
+          });
+        });
+    }
+
     function showPaymentPopup() {
       fetch('thanhtoan.html')
         .then(res => res.text())
@@ -750,14 +746,54 @@
             setTimeout(() => {
               if (typeof initializeThanhToanUI === 'function') {
                 initializeThanhToanUI();
+
               } else {
                 console.error('Không tìm thấy hàm initializeThanhToanUI');
               }
             }, 100); // Thêm timeout nhỏ để đảm bảo DOM đã render xong
           };
           document.body.appendChild(script);
+
+          // Sau khi popup đã được thêm vào DOM
+          setTimeout(() => {
+            const overlay = document.querySelector('.payment-overlay');
+            const box = document.querySelector('.payment-popup');
+
+            if (overlay && box) {
+              overlay.addEventListener('click', function (e) {
+                if (!box.contains(e.target)) {
+                  // 👉 Người dùng click ra ngoài popup thanh toán
+                  // Gọi lại popup ghế
+                  document.getElementById('popup-container').innerHTML = ''; // Xóa popup hiện tại
+                  showSeatPopup();
+
+                  // Khi popup ghế được hiển thị lại, thêm sự kiện cho nút xác nhận
+                  // setTimeout(() => {
+                  //   const confirmButton = document.getElementById('bookButton');
+                  //   if (confirmButton) {
+                  //     confirmButton.addEventListener('click', function () {
+                  //       showPaymentPopup();
+                  //     });
+                  //   }
+                  // }, 100);
+                }
+              });
+            }
+
+            // Thêm sự kiện cho nút back nếu có trong popup thanh toán
+            // const backButton = document.getElementById('backButton');
+            // if (backButton) {
+            //   backButton.addEventListener('click', function () {
+            //     document.getElementById('popup-container').innerHTML = '';
+            //     showSeatPopup();
+            //   });
+            // }
+          }, 100); // Đợi DOM render xong
+
         });
     }
+
+
   </script>
 
 

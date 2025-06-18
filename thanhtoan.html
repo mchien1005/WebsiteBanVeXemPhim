@@ -129,9 +129,9 @@
     }
 
     .search-input-container input {
-        width: 400px;
+        width: 300px;
         padding: 0.5rem 1rem 0.5rem 2.5rem;
-        border-radius: 8px;
+        border-radius: 10px;
         border: 1px solid #ccc;
         font-size: 0.875rem;
         outline: none;
@@ -148,38 +148,76 @@
     }
 
     .img-bank {
+        min-width: 106px;
         height: 51px;
-        width: 106px;
+        width: auto;
         object-fit: contain;
+        transition: transform 0.2s ease;
+        max-width: 100%;
+        border-radius: 10px;
+        background-color: #fff;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     }
 
     .btn-bank {
-        height: 70px;
+        background-color: transparent;
+        border: none;
         display: flex;
         align-items: center;
         justify-content: center;
-        border-radius: 8px;
-        border: 1px solid #ccc;
-        background-color: white;
+        height: 80px;
+        /* Đồng nhất chiều cao */
+        width: 100%;
+        /* Tự co theo col */
+        border-radius: 12px;
+        /* box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); */
+        padding: 8px;
+        /* Đừng quá lớn */
+        transition: box-shadow 0.2s ease;
     }
 
+    .img-bank:hover {
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+        transform: translateY(-2px);
+    }
+
+
     /* Form thanh toán */
+
     .form-group {
         display: flex;
         align-items: flex-start;
-        margin-bottom: 18px;
+        margin-bottom: 40px;
         font-family: Roboto, sans-serif;
     }
 
     .form-label {
         width: 180px;
+        color: #000;
         font-size: 14px;
         font-weight: 500;
+        margin-right: 10px;
         padding-top: 6px;
+        margin-left: 25px;
+        font-family: Roboto;
+        font-style: normal;
+    }
+
+    .input-wrapper {
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .required {
+        color: #F00;
+        font-size: 14px;
+        font-weight: 400;
+        margin-left: 4px;
     }
 
     .form-control {
-        width: 250px;
+        width: 183px;
         height: 28px;
         border-radius: 10px;
         background: #FFF;
@@ -190,7 +228,7 @@
 
     .error-message {
         color: red;
-        font-size: 12px;
+        font-size: 11.2px;
         margin-top: 4px;
     }
 
@@ -359,9 +397,11 @@
                     <div class="payment-container flex-grow-1 p-4">
                         <div class="payment-methods">
                             <div class="payment-header">
-                                <label for="paymentMethod" class="form-label" style="font-size: 15px;">
+                                <label for="paymentMethod" class="form-label"
+                                    style="font-size: 15px; text-align: left; display: block; margin-left: 0;">
                                     Phương Thức Thanh Toán
                                 </label>
+
 
                                 <select class="form-select form-select-sm" style="color: black;" id="paymentMethod">
                                     <option value="atm" selected>ATM</option>
@@ -380,112 +420,112 @@
                                 <div class="bank-list row row-cols-4 g-3" id="bankList">
                                     <!-- Danh sách các ngân hàng -->
                                     <div class="col">
-                                        <button type="button" class="btn-bank btn btn-light rounded shadow-sm w-100 p-2"
+                                        <button type="button" class="btn-bank btn btn-white rounded-3 w-100 p-3"
                                             data-bank="Vietcombank">
                                             <img src="images/Vietcombank.png" alt="Vietcombank" class="img-bank" />
                                         </button>
                                     </div>
 
                                     <div class="col">
-                                        <button type="button" class="btn-bank btn btn-light rounded shadow-sm w-100 p-2"
+                                        <button type="button" class="btn-bank btn btn-white rounded-3  w-100 p-3"
                                             data-bank="BIDV">
                                             <img src="images/BIDV.png" alt="BIDV" class="img-bank" />
                                         </button>
                                     </div>
 
                                     <div class="col">
-                                        <button type="button" class="btn-bank btn btn-light rounded shadow-sm w-100 p-2"
+                                        <button type="button" class="btn-bank btn btn-white rounded-3  w-100 p-3"
                                             data-bank="AGRIBANK">
                                             <img src="images/AGRBANK.png" alt="AGRIBANK" class="img-bank" />
                                         </button>
                                     </div>
 
                                     <div class="col">
-                                        <button type="button" class="btn-bank btn btn-light rounded shadow-sm w-100 p-2"
+                                        <button type="button" class="btn-bank btn btn-white rounded-3  w-100 p-3"
                                             data-bank="VIETINBANK">
                                             <img src="images/Viettinbank.png" alt="VietinBank" class="img-bank" />
                                         </button>
                                     </div>
 
                                     <div class="col">
-                                        <button type="button" class="btn-bank btn btn-light rounded shadow-sm w-100 p-2"
+                                        <button type="button" class="btn-bank btn btn-white rounded-3  w-100 p-3"
                                             data-bank="TECHCOMBANK">
                                             <img src="images/Techcombank.png" alt="TECHCOMBANK" class="img-bank" />
                                         </button>
                                     </div>
 
                                     <div class="col">
-                                        <button type="button" class="btn-bank btn btn-light rounded shadow-sm w-100 p-2"
+                                        <button type="button" class="btn-bank btn btn-white  w-100 p-3"
                                             data-bank="VPBANK">
                                             <img src="images/VPBANK.png" alt="VPBank" class="img-bank" />
                                         </button>
                                     </div>
 
                                     <div class="col">
-                                        <button type="button" class="btn-bank btn btn-light rounded shadow-sm w-100 p-2"
+                                        <button type="button" class="btn-bank btn btn-white rounded-3   p-3"
                                             data-bank="SACOMBANK">
                                             <img src="images/SAC.png" alt="Sacombank" class="img-bank" />
                                         </button>
                                     </div>
 
                                     <div class="col">
-                                        <button type="button" class="btn-bank btn btn-light rounded shadow-sm w-100 p-2"
+                                        <button type="button" class="btn-bank btn btn-white rounded-3  w-100 p-3"
                                             data-bank="TPBANK">
                                             <img src="images/TP.png" alt="TPBank" class="img-bank" />
                                         </button>
                                     </div>
 
                                     <div class="col">
-                                        <button type="button" class="btn-bank btn btn-light rounded shadow-sm w-100 p-2"
+                                        <button type="button" class="btn-bank btn btn-white rounded-3  w-100 p-3"
                                             data-bank="MBBANK">
                                             <img src="images/MB.png" alt="MB Bank" class="img-bank" />
                                         </button>
                                     </div>
 
                                     <div class="col">
-                                        <button type="button" class="btn-bank btn btn-light rounded shadow-sm w-100 p-2"
+                                        <button type="button" class="btn-bank btn btn-white rounded-3  w-100 p-3"
                                             data-bank="VIB">
                                             <img src="images/VIB.png" alt="VIB" class="img-bank" />
                                         </button>
                                     </div>
 
                                     <div class="col">
-                                        <button type="button" class="btn-bank btn btn-light rounded shadow-sm w-100 p-2"
+                                        <button type="button" class="btn-bank btn btn-white rounded-3  w-100 p-3"
                                             data-bank="LPBANK">
                                             <img src="images/LP.png" alt="LBank" class="img-bank" />
                                         </button>
                                     </div>
 
                                     <div class="col">
-                                        <button type="button" class="btn-bank btn btn-light rounded shadow-sm w-100 p-2"
+                                        <button type="button" class="btn-bank btn btn-white rounded-3  w-100 p-3"
                                             data-bank="ABABNK">
                                             <img src="images/ABBANK.png" alt="ABBANK" class="img-bank" />
                                         </button>
                                     </div>
 
                                     <div class="col">
-                                        <button type="button" class="btn-bank btn btn-light rounded shadow-sm w-100 p-2"
+                                        <button type="button" class="btn-bank btn btn-white rounded-3  w-100 p-3"
                                             data-bank="ACB">
                                             <img src="images/ACB.png" alt="ACB" class="img-bank" />
                                         </button>
                                     </div>
 
                                     <div class="col">
-                                        <button type="button" class="btn-bank btn btn-light rounded shadow-sm w-100 p-2"
+                                        <button type="button" class="btn-bank btn btn-white rounded-3  w-100 p-3"
                                             data-bank="VIETBANK">
                                             <img src="images/VIETBANK.png" alt="Vietbank" class="img-bank" />
                                         </button>
                                     </div>
 
                                     <div class="col">
-                                        <button type="button" class="btn-bank btn btn-light rounded shadow-sm w-100 p-2"
+                                        <button type="button" class="btn-bank btn btn-white rounded-3  w-100 p-3"
                                             data-bank="PGBANK">
                                             <img src="images/PG.png" alt="PGBank" class="img-bank" />
                                         </button>
                                     </div>
 
                                     <div class="col">
-                                        <button type="button" class="btn-bank btn btn-light rounded shadow-sm w-100 p-2"
+                                        <button type="button" class="btn-bank btn btn-white rounded-3  w-100 p-3"
                                             data-bank="PVcomBank">
                                             <img src="images/PV.png" alt="PVcomBank" class="img-bank" />
                                         </button>
@@ -500,8 +540,9 @@
 
 
 
-                                <form style="border-radius: 10px; background: #CAC9C9; padding: 5px;" id="atmForm">
-                                    <h5 class="mb-4 text-danger" style="font-size: 20px; text-align: center;">
+                                <form style="border-radius: 10px; background: #CAC9C9; padding: 20px;" id="atmForm">
+                                    <h5 class="mb-4 text-danger"
+                                        style="font-size: 20px; text-align: center;font-weight: bold;">
                                         Thanh toán qua thẻ ATM
                                     </h5>
                                     <!-- Tên ngân hàng (readonly) -->
@@ -597,63 +638,61 @@
                             </div>
                             <div id="theQuocTeForm" class="d-none">
 
-                                <form style="border-radius: 10px; background: #CAC9C9; padding: 30px;"
+                                <form style="border-radius: 10px; background: #CAC9C9; padding: 20px; height: 420px;"
                                     id="formTheQuocTe">
                                     <!-- Trường: Số thẻ -->
-                                    <h5 class="mb-4 text-danger" style="font-size: 20px;text-align: center;">Thanh toán
+                                    <h5 class="mb-4 text-danger"
+                                        style="font-size: 20px;text-align: center;font-weight: bold;">Thanh toán
                                         qua Thẻ
                                         Quốc tế
                                         (VISA/MasterCard)</h5>
                                     <!-- Trường: Số thẻ -->
-                                    <div class="form-group" style="margin-bottom: 25px;">
+                                    <div class="form-group">
                                         <label for="txtSoTheQT" class="form-label">Số thẻ <span
                                                 class="required">*</span></label>
-                                        <div class="input-wrapper" style="margin-top: 5px;">
+                                        <div class="input-wrapper">
                                             <input type="text" class="form-control" id="txtSoTheQT"
                                                 placeholder="Nhập số thẻ quốc tế" />
                                             <div class="error-message" id="errSoTheQT"></div>
                                         </div>
-                                        <img src="images/tick.png" class="checkmark" id="checkSoTheQT" alt="Đúng"
-                                            style="margin-top: 5px; margin-left: 10px; height: 20px;" />
+                                        <img src="images/tick.png" class="checkmark" id="checkSoTheQT" alt="Đúng" />
                                     </div>
 
+
                                     <!-- Trường: Ngày hết hạn -->
-                                    <div class="form-group" style="margin-bottom: 25px;">
+                                    <div class="form-group">
                                         <label for="txtHetHanQT" class="form-label">Ngày hết hạn <span
                                                 class="required">*</span></label>
-                                        <div class="input-wrapper" style="margin-top: 5px;">
+                                        <div class="input-wrapper">
                                             <input type="text" class="form-control" id="txtHetHanQT"
                                                 placeholder="MM/YY" />
                                             <div class="error-message" id="errHetHanQT"></div>
                                         </div>
-                                        <img src="images/tick.png" class="checkmark" id="checkHetHanQT" alt="Đúng"
-                                            style="margin-top: 5px; margin-left: 10px; height: 20px;" />
+                                        <img src="images/tick.png" class="checkmark" id="checkHetHanQT" alt="Đúng" />
                                     </div>
 
                                     <!-- Trường: Mã PIN -->
-                                    <div class="form-group" style="margin-bottom: 25px;">
+                                    <div class="form-group">
                                         <label for="txtPinQT" class="form-label">Mã PIN <span
                                                 class="required">*</span></label>
-                                        <div class="input-wrapper" style="margin-top: 5px;">
+                                        <div class="input-wrapper">
                                             <input type="password" class="form-control" id="txtPinQT"
                                                 placeholder="••••" />
                                             <div class="error-message" id="errPinQT"></div>
                                         </div>
-                                        <img src="images/tick.png" class="checkmark" id="checkPinQT" alt="Đúng"
-                                            style="margin-top: 5px; margin-left: 10px; height: 20px;" />
+                                        <img src="images/tick.png" class="checkmark" id="checkPinQT" alt="Đúng" />
                                     </div>
 
                                     <!-- Trường: Tên chủ thẻ -->
-                                    <div class="form-group" style="margin-bottom: 25px;">
+                                    <div class="form-group">
                                         <label for="txtTenChuTheQT" class="form-label">Tên chủ thẻ <span
                                                 class="required">*</span></label>
-                                        <div class="input-wrapper" style="margin-top: 5px;">
+                                        <div class="input-wrapper">
                                             <input type="text" class="form-control" id="txtTenChuTheQT"
                                                 placeholder="Tên in trên thẻ" />
                                             <div class="error-message" id="errTenChuTheQT"></div>
                                         </div>
-                                        <img src="images/tick.png" class="checkmark" id="checkTenChuTheQT" alt="Đúng"
-                                            style="margin-top: 5px; margin-left: 10px; height: 20px;" />
+                                        <img src="images/tick.png" class="checkmark" id="checkTenChuTheQT" alt="Đúng" />
                                     </div>
 
 
@@ -671,22 +710,22 @@
                             </div>
 
                             <div class="qr-content d-none" id="qrContent"
-                                style="padding-left: 0; padding-right: 0; margin-left: 0; margin-right: 0; width: 100%;">
+                                style="padding-left: 0; padding-right: 0; margin-left: 0; margin-right: 0; width: 100%; height: 420px;">
                                 <!-- Hàng đầu tiên: Thanh toán bên trái, logo bên phải -->
                                 <div class="d-flex justify-content-between align-items-center mb-2"
                                     style="padding: 0; margin: 0; width: 100%;">
                                     <!-- Góc trái -->
-                                    <div class="d-flex align-items-center">
+                                    <div class="d-flex align-items-center" style="margin-top: 10px;margin-left: 20px;">
                                         <span class="fw-semibold" id="qrTopLeftTitle"
-                                            style="font-size: 14px; color: #dc3545;">
+                                            style="font-size: 18px; color: #dc3545;">
                                             Thanh toán qua MoMo
                                         </span>
                                     </div>
                                     <!-- Góc phải -->
-                                    <div class="d-flex align-items-center">
-                                        <img src="images/logoCABA.png" alt="CABA Logo" style="height: 40px;" />
+                                    <div class="d-flex align-items-center" style="margin-top: 10px;">
+                                        <img src="images/logoCABA.png" alt="CABA Logo" style="height: 48px;" />
                                         <img id="qrLogoImage" src="images/MOMO.png" alt="QR Logo"
-                                            style="height: 40px;" />
+                                            style="height: 48px; margin-left: 15px;margin-right: 20px;" />
                                     </div>
                                 </div>
 
@@ -700,7 +739,7 @@
                                 <div class="qr-code-wrapper d-flex flex-column align-items-center"
                                     style="width: 100%; padding: 0;">
                                     <img id="qrImage" src="images/qrmomo.webp" alt="QR Code"
-                                        style="width: 180px; border-radius: 10px; padding: 8px; cursor: pointer;"
+                                        style="width: 200px; border-radius: 10px; padding: 8px; cursor: pointer;"
                                         onclick="showSuccessPopup()" />
 
                                     <p class="mt-3 text-center" id="qrAppInstruction" style="width: 100%;">
@@ -811,7 +850,8 @@
                         <p style="margin-left: 45px;">Thanh toán thành công !!!</p>
                     </div>
                     <div class="confirm-buttons">
-                        <button class="btn-ok" onclick="closePopup('successPopup')">OK</button>
+                        <button class="btn-ok"
+                            onclick="closePopup('successPopup'); window.location.href='index.html';">OK</button>
                         <!-- <button class="btn-ok" onclick="window.location.href='index.html'">OK</button> -->
                     </div>
                 </div>
