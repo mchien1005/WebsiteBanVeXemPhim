@@ -508,7 +508,7 @@
             justify-content: center; */
         padding: 2px 10px;
         border-radius: 10px;
-
+        margin-left: 280px;
         font-size: 14px;
         font-style: normal;
         font-weight: 500;
@@ -620,6 +620,25 @@
         </div>
         <div class="ok-buttons">
             <button class="btn-ok" onclick="handleTimeoutConfirm()">Xác nhận</button>
+        </div>
+    </div>
+</div>
+
+<div id="seatOccupiedPopup" class="confirm-overlay" style="display: none;">
+    <div class="confirm-content">
+        <div class="confirm-header">
+            Thông báo
+            <button class="close-popup" onclick="closePopup('seatOccupiedPopup')">
+                <img src="icons/close.svg" />
+            </button>
+        </div>
+        <hr class="custom-line" />
+        <div class="ok-body">
+            <img src="icons/warning.svg" width="48" alt="!" />
+            <p>Ghế đã được chọn. Vui lòng chọn ghế khác!!!</p>
+        </div>
+        <div class="ok-buttons">
+            <button class="btn-ok" onclick="closePopup('seatOccupiedPopup')">Xác nhận</button>
         </div>
     </div>
 </div>

@@ -92,6 +92,7 @@
 
         // Không cho chọn ghế đã bán
         if (seat.classList.contains('occupied')) {
+            document.getElementById('seatOccupiedPopup').style.display = "flex";
             return;
         }
 
