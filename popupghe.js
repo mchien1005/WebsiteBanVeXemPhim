@@ -160,6 +160,7 @@
             return;
         }
         // alert(`Xác nhận đặt ghế: ${selectedSeats.join(', ')}`);
+        processBooking();
     });
 
     // Initialize the app
@@ -195,4 +196,33 @@
         showPaymentPopup();
       });
       
+// Hiển thị thông báo lỗi hệ thống
+function showSystemErrorPopup() {
+    document.getElementById("systemErrorPopup").style.display = "flex";
+  }
+  
+  // Xử lý khi có lỗi hệ thống
+  function handleSystemError() {
+    showSystemErrorPopup();
+    // Có thể thêm các hành động khác khi xảy ra lỗi như log lỗi
+  }
+  
+  // Hàm mô phỏng đặt vé với khả năng xảy ra lỗi
+  function processBooking() {
+    // Hiển thị loading nếu cần
     
+    try {
+      // Mô phỏng xử lý đặt vé với 20% khả năng lỗi
+      if (Math.random() < 0.2) {
+        // Mô phỏng lỗi hệ thống
+        throw new Error("Simulated system error");
+      }
+      
+      // Nếu không có lỗi, tiến hành đặt vé thành công
+      document.getElementById("popup-container").innerHTML = "";
+      showPaymentPopup();
+    } catch (error) {
+      console.error("Lỗi khi đặt vé:", error);
+      handleSystemError();
+    }
+  }
